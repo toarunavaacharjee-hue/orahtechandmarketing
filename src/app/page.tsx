@@ -40,8 +40,9 @@ export default function HomePage() {
                 Studio moodboard
               </p>
               <p className="mt-3 text-sm leading-6 text-white/60">
-                Editorial stills for atmosphere (not client deliverables). Swap these for your own
-                case photography anytime.
+                Built-in SVG moodboards for layout (no external photos). Replace files in{" "}
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-white/80">/public/moodboard</code>{" "}
+                with your own shots when you have them.
               </p>
               <div className="mt-6">
                 <CreativePhotoStrip />

@@ -1,21 +1,19 @@
-import Image from "next/image";
-
+/** Local SVG moodboards — always load (no external CDN). Replace files in /public/moodboard when you have real photos. */
 const shots = [
   {
-    src: "https://images.unsplash.com/photo-1626780772303-eeaffa1cbf32?auto=format&fit=crop&w=800&q=80",
-    alt: "Designer workspace with layouts and colour exploration",
+    src: "/moodboard/studio.svg",
+    alt: "Abstract studio layout — layouts and colour exploration",
   },
   {
-    src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
+    src: "/moodboard/geometry.svg",
     alt: "Abstract geometric brand shapes and gradients",
   },
   {
-    src: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80",
-    alt: "Creative team reviewing brand and UI work on screen",
+    src: "/moodboard/collab.svg",
+    alt: "Abstract collaboration — brand and UI review",
   },
 ] as const;
 
-/** Moodboard-style strip — Unsplash editorial imagery (not client work). */
 export function CreativePhotoStrip() {
   return (
     <div className="grid gap-3 sm:grid-cols-3">
@@ -24,15 +22,15 @@ export function CreativePhotoStrip() {
           key={s.src}
           className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] ring-1 ring-white/5"
         >
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG moodboards; next/image is poor fit for vector + fill */}
+          <img
             src={s.src}
             alt={s.alt}
-            fill
-            sizes="(max-width: 640px) 100vw, 33vw"
-            className="object-cover transition duration-500 hover:scale-[1.03]"
+            className="h-full w-full object-cover object-center transition duration-500 hover:scale-[1.03]"
             loading="lazy"
+            decoding="async"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050A18]/80 via-transparent to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050A18]/70 via-transparent to-transparent" />
         </div>
       ))}
     </div>

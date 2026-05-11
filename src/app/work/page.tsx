@@ -55,7 +55,8 @@ export default function WorkPage() {
                 Visual texture
               </p>
               <p className="mt-3 text-sm leading-6 text-white/55">
-                Placeholder photography for layout energy (Unsplash—not client IP).
+                Local SVG moodboards for visual rhythm—swap for real case art in{" "}
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-white/80">/public/moodboard</code>.
               </p>
               <div className="mt-6">
                 <CreativePhotoStrip />
