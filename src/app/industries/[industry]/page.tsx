@@ -65,8 +65,8 @@ export default async function IndustryPage({ params }: Props) {
       <section className="pb-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
           <div className="grid gap-4 lg:grid-cols-12">
-            <FadeIn>
-              <div className="lg:col-span-5 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <FadeIn className="min-w-0 lg:col-span-5">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8">
                 <div className="font-heading text-2xl text-white">Who this is for</div>
                 <ul className="mt-6 grid gap-3 text-sm text-white/70">
                   {data.whoItsFor.map((s) => (
@@ -91,8 +91,8 @@ export default async function IndustryPage({ params }: Props) {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.05}>
-              <div className="lg:col-span-7 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <FadeIn delay={0.05} className="min-w-0 lg:col-span-7">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8">
                 <div className="font-heading text-2xl text-white">How we help (start → scale)</div>
                 <div className="mt-6 grid gap-4">
                   {data.howWeHelp.map((s, idx) => (

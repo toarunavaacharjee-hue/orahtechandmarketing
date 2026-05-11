@@ -51,8 +51,8 @@ export default function AboutPage() {
       <section className="pb-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
           <div className="grid gap-4 lg:grid-cols-12">
-            <FadeIn>
-              <div className="lg:col-span-6 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <FadeIn className="min-w-0 lg:col-span-6">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8">
                 <div className="font-heading text-2xl text-white">Our mission</div>
                 <p className="mt-4 text-sm leading-6 text-white/70">
                   Help ambitious brands grow faster by building conversion-first digital
@@ -63,8 +63,8 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.05}>
-              <div className="lg:col-span-6 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <FadeIn delay={0.05} className="min-w-0 lg:col-span-6">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8">
                 <div className="font-heading text-2xl text-white">Our team</div>
                 <p className="mt-4 text-sm leading-6 text-white/70">
                   A compact, senior team with specialists across ads, SEO, design,

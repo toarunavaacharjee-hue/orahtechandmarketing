@@ -33,8 +33,8 @@ export default function ContactPage() {
       <section className="pb-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
           <div className="grid gap-8 lg:grid-cols-12">
-            <FadeIn>
-              <div className="lg:col-span-5 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <FadeIn className="min-w-0 lg:col-span-5">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8">
                 <div className="font-heading text-2xl text-white">What happens next</div>
                 <ol className="mt-6 grid gap-4 text-sm text-white/70">
                   {[
@@ -61,8 +61,8 @@ export default function ContactPage() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.05}>
-              <div className="lg:col-span-7 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <FadeIn delay={0.05} className="min-w-0 lg:col-span-7">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8">
                 <div className="font-heading text-2xl text-white">Tell us about your project</div>
                 <p className="mt-3 text-sm leading-6 text-white/70">
                   The more details you share, the faster we can propose the right plan.
