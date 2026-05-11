@@ -118,7 +118,7 @@ export const HOME = {
     metrics: [
       { value: "200+", label: "Brands Supported" },
       { value: "1,000+", label: "Creatives Delivered" },
-      { value: "12+", label: "Industries Served" },
+      { value: "8+", label: "Industries Served" },
     ],
   },
   industries: [
@@ -128,7 +128,6 @@ export const HOME = {
     "Real Estate",
     "D2C",
     "Education",
-    "Fintech",
     "Hospitality",
     "NGO / Non-profit",
   ],
@@ -191,7 +190,6 @@ export type IndustrySlug =
   | "real-estate"
   | "d2c"
   | "education"
-  | "fintech"
   | "hospitality"
   | "ngo";
 
@@ -314,24 +312,6 @@ export const INDUSTRIES: Record<
       { title: "Refine & Scale", desc: "Template systems to scale new batches/programs quickly." },
     ],
     recommendedServices: ["Web Design & Development", "Branding & Identity", "Social Media Creatives"],
-  },
-  fintech: {
-    slug: "fintech",
-    name: "Fintech",
-    hero: {
-      headline: "Trust + clarity are your best conversion levers.",
-      subtext:
-        "We design clean UI, credible landing experiences, and brand systems that make complex products feel simple.",
-    },
-    whoItsFor: ["Lending", "Payments", "Wealth & insurance"],
-    outcomes: ["Better trust signals", "Cleaner UX flows", "Premium brand feel"],
-    howWeHelp: [
-      { title: "Discovery & Audit", desc: "UX friction review and trust-signal audit across key journeys." },
-      { title: "Strategy & Direction", desc: "Design system planning and message hierarchy." },
-      { title: "Design & Build", desc: "UI components, web pages, and template systems." },
-      { title: "Refine & Scale", desc: "Consistency improvements and rapid iteration support." },
-    ],
-    recommendedServices: ["UI/UX for Products", "Branding & Identity", "Web Design & Development"],
   },
   hospitality: {
     slug: "hospitality",
