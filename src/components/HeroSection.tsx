@@ -34,7 +34,7 @@ export function HeroSection() {
         <div className="absolute inset-0 [background-image:radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:22px_22px] opacity-[0.18]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[calc(100vh-72px)] w-full max-w-6xl flex-col justify-center px-4 pb-14 pt-14 sm:px-6 sm:pt-20">
+      <div className="relative mx-auto flex min-h-[calc(100vh-88px)] w-full max-w-6xl flex-col justify-center px-4 pb-14 pt-24 sm:px-6 sm:pt-28">
         <div className="max-w-3xl">
           <motion.div
             variants={fadeUp}

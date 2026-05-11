@@ -13,6 +13,7 @@ export const BRAND = {
 export const NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
+  { label: "Industries", href: "/industries" },
   { label: "Work", href: "/work" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -20,92 +21,92 @@ export const NAV_LINKS = [
 
 export const HOME = {
   hero: {
-    headline: "We Build Tech. We Drive Growth.",
+    headline: "We Design Brands. We Build Experiences.",
     subtext:
-      "Orah Tech and Marketing is a full-service digital agency helping ambitious brands scale with AI-powered marketing, performance campaigns, and custom technology solutions.",
+      "Orah Tech and Marketing is a creative-first agency helping ambitious brands stand out with high-impact design, conversion-focused websites, and content systems built for consistency.",
     ctaPrimary: "Start a Project",
     ctaSecondary: "See Our Work",
-    ticker: ["500+ Campaigns", "98% Client Retention", "₹10Cr+ Revenue Generated"],
+    ticker: ["Creative Systems", "Conversion-focused Design", "Fast Turnarounds"],
   },
   marquee: [
-    "SEO",
-    "Performance Marketing",
-    "Web Development",
-    "AI Automation",
-    "Social Media",
     "Branding",
-    "Content Marketing",
-    "Email Marketing",
+    "Creative Design",
+    "Web Design & Development",
+    "UI/UX",
+    "Social Media Creatives",
+    "Content Design",
+    "Pitch Decks",
+    "AI Creative Automation",
   ],
   services: {
-    title: "Services built for growth—engineered for performance.",
+    title: "Creative & design that looks premium—and works.",
     subtitle:
-      "From acquisition to automation, we blend strategy + execution so your marketing compounds month after month.",
+      "We blend brand strategy, design craft, and technical execution to create experiences people remember (and act on).",
     items: [
       {
-        title: "Performance Marketing",
-        desc: "Google, Meta & programmatic campaigns focused on ROAS.",
-        icon: "rocket",
-        bullets: [
-          "Full-funnel campaigns across Search, Shopping, Meta, and programmatic",
-          "Creative testing frameworks + landing-page aligned messaging",
-          "Conversion tracking, attribution sanity checks, weekly optimisation",
-          "Transparent reporting tied to CAC, ROAS, and revenue impact",
-        ],
-      },
-      {
-        title: "SEO & Content",
-        desc: "Rank higher, get found faster.",
-        icon: "search",
-        bullets: [
-          "Technical SEO audits, on-page fixes, and schema where it matters",
-          "Topic clusters + content strategy aligned to pipeline",
-          "Content production with briefs, review loops, and QA",
-          "Monthly reporting on rankings, traffic quality, and conversions",
-        ],
-      },
-      {
-        title: "Web & App Development",
-        desc: "Fast, scalable, conversion-optimised experiences.",
-        icon: "code",
-        bullets: [
-          "Next.js websites built for speed, SEO, and conversion",
-          "Landing pages that match ad intent and improve ROAS",
-          "Performance improvements (Core Web Vitals) and technical cleanup",
-          "Integrations: analytics, forms, CRM, payment, and automation tools",
-        ],
-      },
-      {
-        title: "AI Marketing Automation",
-        desc: "Workflows that work while you sleep.",
+        title: "Creative Strategy & Design",
+        desc: "Campaign concepts, content systems, and design that scales.",
         icon: "spark",
         bullets: [
-          "Lead capture → enrichment → routing automations",
-          "Reporting pipelines to reduce manual work and improve decisions",
-          "AI-assisted content ops: briefs, variants, repurposing",
-          "Chat/support automations with safe guardrails",
+          "Creative direction, moodboards, and production-ready briefs",
+          "Design systems for repeatable, on-brand output",
+          "Ad/landing-page creative design (design-only)",
+          "Fast iteration cycles and consistent quality control",
         ],
       },
       {
-        title: "Social Media Management",
-        desc: "Content, community & growth—consistent and on brand.",
-        icon: "social",
-        bullets: [
-          "Content strategy, calendars, and creative systems",
-          "Reels/shorts-driven distribution with performance learnings",
-          "Community management and response playbooks",
-          "Monthly review of reach, engagement, and lead contribution",
-        ],
-      },
-      {
-        title: "Branding & Design",
-        desc: "Identity systems that command attention.",
+        title: "Branding & Identity",
+        desc: "Positioning, visual identity, and guidelines your team can use.",
         icon: "palette",
         bullets: [
-          "Brand positioning, messaging, and visual direction",
-          "Design systems for web, social, and marketing assets",
-          "High-impact landing page and ad creative design",
-          "Guidelines so teams stay consistent as you scale",
+          "Brand positioning + messaging foundations",
+          "Logo refresh, color, typography, and visual language",
+          "Brand guidelines + templates for social and marketing",
+          "Design assets for product, web, and content teams",
+        ],
+      },
+      {
+        title: "Web Design & Development",
+        desc: "Fast, modern websites built for clarity and conversion.",
+        icon: "code",
+        bullets: [
+          "Next.js websites with clean UI, strong IA, and SEO fundamentals",
+          "Landing pages for offers, campaigns, and lead capture",
+          "Performance improvements (Core Web Vitals) and UX polish",
+          "Integrations: forms, analytics, CRM, and automation tools",
+        ],
+      },
+      {
+        title: "UI/UX for Products",
+        desc: "Design flows, interfaces, and systems users love to use.",
+        icon: "search",
+        bullets: [
+          "UX audits + friction mapping for key flows",
+          "Wireframes, prototypes, and UI design systems",
+          "Design handoff ready for engineering teams",
+          "Accessibility and consistency checks",
+        ],
+      },
+      {
+        title: "Social Media Creatives",
+        desc: "Scroll-stopping designs for consistent, on-brand growth.",
+        icon: "social",
+        bullets: [
+          "Static + carousel creatives and reel cover systems",
+          "Content calendars aligned to brand pillars",
+          "Template packs for faster in-house production",
+          "Monthly refreshes to avoid creative fatigue",
+        ],
+      },
+      {
+        title: "AI Creative Automation",
+        desc: "Workflows that speed up design ops—without losing brand control.",
+        icon: "rocket",
+        bullets: [
+          "Brief → variant → review workflows for faster production",
+          "Asset organisation + naming + version control systems",
+          "AI-assisted repurposing for multi-format content",
+          "Automation for approvals and handoffs",
         ],
       },
     ],
@@ -113,10 +114,10 @@ export const HOME = {
   why: {
     title: "Why Orah",
     blurb:
-      "We're not a vendor. We're your growth partner — combining strategic thinking with technical execution to deliver results that compound.",
+      "We’re a creative partner—built for speed, consistency, and quality. You get senior-level taste, clear process, and delivery that feels effortless.",
     metrics: [
-      { value: "₹50Cr+", label: "Ad Spend Managed" },
-      { value: "200+", label: "Brands Grown" },
+      { value: "200+", label: "Brands Supported" },
+      { value: "1,000+", label: "Creatives Delivered" },
       { value: "12+", label: "Industries Served" },
     ],
   },
@@ -129,23 +130,24 @@ export const HOME = {
     "Education",
     "Fintech",
     "Hospitality",
+    "NGO / Non-profit",
   ],
   testimonials: [
     {
       quote:
-        "Their performance campaigns scaled our leads without burning budget. Clear reporting, fast iterations, real results.",
+        "The design quality is premium and consistent. Our social content finally looks like a real brand.",
       name: "Aditi Sharma",
       company: "D2C Skincare Brand",
     },
     {
       quote:
-        "Orah rebuilt our website and improved conversions immediately. The team feels like an extension of our business.",
+        "They redesigned our website with a clean narrative and better UX. The team is fast, collaborative, and detail-obsessed.",
       name: "Rahul Mehta",
       company: "B2B SaaS Founder",
     },
     {
       quote:
-        "From SEO strategy to content execution, everything is data-led. Our rankings and inbound pipeline both grew steadily.",
+        "From brand guidelines to templates, everything is systemised. We’re able to ship content faster without compromising quality.",
       name: "Priya Nair",
       company: "Healthcare Services",
     },
@@ -153,33 +155,219 @@ export const HOME = {
   process: [
     {
       title: "Discovery & Audit",
-      desc: "Deep dive into your funnel, analytics, and competitors.",
+      desc: "Understand your brand, audience, and what the creative must achieve.",
     },
     {
-      title: "Strategy & Planning",
-      desc: "Clear roadmap with channels, KPIs, and timelines.",
+      title: "Strategy & Direction",
+      desc: "Messaging, design direction, systems, and a clear production plan.",
     },
     {
-      title: "Execution",
-      desc: "Design, dev, creatives, and campaigns—built to ship fast.",
+      title: "Design & Build",
+      desc: "Branding, creatives, websites, and templates—delivered in sprints.",
     },
     {
-      title: "Optimise & Scale",
-      desc: "Weekly optimisation, experiments, and performance sprints.",
+      title: "Refine & Scale",
+      desc: "Iterate, standardise, and scale output with better systems.",
     },
   ],
   cta: {
-    title: "Ready to Grow?",
-    subtitle: "Book a free strategy call and get a quick-win plan for the next 30 days.",
-    button: "Book a Free Strategy Call",
+    title: "Ready to Look Premium?",
+    subtitle: "Book a free creative consult and get an action plan for your next 30 days.",
+    button: "Book a Free Creative Consult",
   },
   footer: {
     quickLinks: ["Services", "About", "Work", "Contact"],
     contact: {
-      email: "hello@orahtechandmarketing.com",
-      phone: "+91 90000 00000",
-      city: "India",
+      email: "orahhechandmarketing@gmail.com",
+      city: "USA + India (remote)",
     },
   },
 } as const;
+
+export type IndustrySlug =
+  | "ecommerce"
+  | "saas"
+  | "healthcare"
+  | "real-estate"
+  | "d2c"
+  | "education"
+  | "fintech"
+  | "hospitality"
+  | "ngo";
+
+export const INDUSTRIES: Record<
+  IndustrySlug,
+  {
+    slug: IndustrySlug;
+    name: string;
+    hero: { headline: string; subtext: string };
+    whoItsFor: string[];
+    outcomes: string[];
+    howWeHelp: Array<{ title: string; desc: string }>;
+    recommendedServices: Array<(typeof HOME.services.items)[number]["title"]>;
+  }
+> = {
+  ecommerce: {
+    slug: "ecommerce",
+    name: "E-commerce",
+    hero: {
+      headline: "Make your store look premium—and convert better.",
+      subtext:
+        "We design product-first creatives and high-trust landing experiences that improve clarity and conversion across the funnel.",
+    },
+    whoItsFor: ["D2C brands", "Catalog-heavy stores", "New launches and seasonal drops"],
+    outcomes: ["Higher trust + clarity", "Better product storytelling", "Stronger creative consistency"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "Store UX audit, product storytelling gaps, and creative consistency check." },
+      { title: "Strategy & Direction", desc: "Creative angles, design system, and templates for fast production." },
+      { title: "Design & Build", desc: "Product creatives, landing pages, PDP improvements, and template packs." },
+      { title: "Refine & Scale", desc: "Monthly refreshes, variants, and better content operations." },
+    ],
+    recommendedServices: ["Creative Strategy & Design", "Branding & Identity", "Web Design & Development", "Social Media Creatives"],
+  },
+  saas: {
+    slug: "saas",
+    name: "SaaS",
+    hero: {
+      headline: "Tell your story clearly—then make the UI feel premium.",
+      subtext:
+        "We design messaging and product experiences that reduce confusion, increase trust, and make your brand feel enterprise-ready.",
+    },
+    whoItsFor: ["B2B SaaS founders", "Product-led teams", "Teams preparing for scale"],
+    outcomes: ["Clearer messaging", "Better landing page UX", "Stronger product UI consistency"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "Website narrative audit, UX review, and brand consistency scan." },
+      { title: "Strategy & Direction", desc: "Positioning, page architecture, and design system planning." },
+      { title: "Design & Build", desc: "Website redesign, UI components, and brand templates." },
+      { title: "Refine & Scale", desc: "Ongoing design support and systemisation for faster shipping." },
+    ],
+    recommendedServices: ["Branding & Identity", "Web Design & Development", "UI/UX for Products"],
+  },
+  healthcare: {
+    slug: "healthcare",
+    name: "Healthcare",
+    hero: {
+      headline: "Build trust through design—before the first call.",
+      subtext:
+        "We create credibility-first websites and content systems that communicate expertise, care, and clarity.",
+    },
+    whoItsFor: ["Clinics & hospitals", "Diagnostics", "Wellness brands"],
+    outcomes: ["Stronger credibility", "Clearer service communication", "Better enquiry experience"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "Trust signal audit, UX clarity check, and content gaps mapping." },
+      { title: "Strategy & Direction", desc: "Service narrative, visual direction, and template system plan." },
+      { title: "Design & Build", desc: "Website pages, content templates, and brand-safe creatives." },
+      { title: "Refine & Scale", desc: "Standardise content production and improve consistency over time." },
+    ],
+    recommendedServices: ["Branding & Identity", "Web Design & Development", "Social Media Creatives"],
+  },
+  "real-estate": {
+    slug: "real-estate",
+    name: "Real Estate",
+    hero: {
+      headline: "Sell the lifestyle with high-trust creative systems.",
+      subtext:
+        "We design premium presentation—project pages, brochures, social creatives, and storytelling that builds confidence.",
+    },
+    whoItsFor: ["Builders & developers", "Broker networks", "Commercial real estate"],
+    outcomes: ["Premium project presentation", "Consistent creative output", "Clearer enquiry journey"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "Project messaging audit, brochure/creative review, and website UX check." },
+      { title: "Strategy & Direction", desc: "Narrative structure, creative direction, and template plan." },
+      { title: "Design & Build", desc: "Landing pages, brochures, social creatives, and template packs." },
+      { title: "Refine & Scale", desc: "Variant creatives and monthly refresh system for new phases/projects." },
+    ],
+    recommendedServices: ["Creative Strategy & Design", "Web Design & Development", "Social Media Creatives", "Branding & Identity"],
+  },
+  d2c: {
+    slug: "d2c",
+    name: "D2C",
+    hero: {
+      headline: "Build a brand people remember—visually and emotionally.",
+      subtext:
+        "We craft identity, content systems, and website experiences that feel premium and consistent across every touchpoint.",
+    },
+    whoItsFor: ["Consumer brands", "Subscription products", "New launches & expansion"],
+    outcomes: ["Higher brand recall", "Better consistency", "Faster content production"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "Brand consistency audit and content system review." },
+      { title: "Strategy & Direction", desc: "Visual direction, content pillars, and templates roadmap." },
+      { title: "Design & Build", desc: "Brand kit, creative packs, and conversion-focused website pages." },
+      { title: "Refine & Scale", desc: "Monthly creative sprints and system improvements." },
+    ],
+    recommendedServices: ["Branding & Identity", "Social Media Creatives", "Web Design & Development", "Creative Strategy & Design"],
+  },
+  education: {
+    slug: "education",
+    name: "Education",
+    hero: {
+      headline: "Communicate outcomes with clarity and trust.",
+      subtext:
+        "We design websites and content that makes your programs easy to understand—and easy to choose.",
+    },
+    whoItsFor: ["EdTech", "Coaching institutes", "Schools & colleges"],
+    outcomes: ["Clearer program storytelling", "Better landing page UX", "Stronger credibility"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "Program page audit and content clarity mapping." },
+      { title: "Strategy & Direction", desc: "Message hierarchy, visual direction, and templates plan." },
+      { title: "Design & Build", desc: "Program landing pages, brochure/pitch assets, and content templates." },
+      { title: "Refine & Scale", desc: "Template systems to scale new batches/programs quickly." },
+    ],
+    recommendedServices: ["Web Design & Development", "Branding & Identity", "Social Media Creatives"],
+  },
+  fintech: {
+    slug: "fintech",
+    name: "Fintech",
+    hero: {
+      headline: "Trust + clarity are your best conversion levers.",
+      subtext:
+        "We design clean UI, credible landing experiences, and brand systems that make complex products feel simple.",
+    },
+    whoItsFor: ["Lending", "Payments", "Wealth & insurance"],
+    outcomes: ["Better trust signals", "Cleaner UX flows", "Premium brand feel"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "UX friction review and trust-signal audit across key journeys." },
+      { title: "Strategy & Direction", desc: "Design system planning and message hierarchy." },
+      { title: "Design & Build", desc: "UI components, web pages, and template systems." },
+      { title: "Refine & Scale", desc: "Consistency improvements and rapid iteration support." },
+    ],
+    recommendedServices: ["UI/UX for Products", "Branding & Identity", "Web Design & Development"],
+  },
+  hospitality: {
+    slug: "hospitality",
+    name: "Hospitality",
+    hero: {
+      headline: "Make people feel the experience before they book.",
+      subtext:
+        "We design premium presentation—web pages, menus, social creatives, and content systems that match your vibe.",
+    },
+    whoItsFor: ["Hotels & resorts", "Restaurants", "Experience brands"],
+    outcomes: ["Premium presentation", "Better storytelling", "Consistent content production"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "Brand vibe audit and content/story review." },
+      { title: "Strategy & Direction", desc: "Creative direction and template system planning." },
+      { title: "Design & Build", desc: "Website pages, menus/collateral, and social creative packs." },
+      { title: "Refine & Scale", desc: "Seasonal refreshes and faster production systems." },
+    ],
+    recommendedServices: ["Social Media Creatives", "Web Design & Development", "Creative Strategy & Design"],
+  },
+  ngo: {
+    slug: "ngo",
+    name: "NGO / Non-profit",
+    hero: {
+      headline: "Storytelling that builds trust—and drives action.",
+      subtext:
+        "We design donor-friendly pages, impact storytelling, and credibility-first brand systems—so supporters feel confident to contribute.",
+    },
+    whoItsFor: ["NGOs", "Charities & foundations", "Community initiatives"],
+    outcomes: ["Higher credibility", "Clearer impact communication", "Better supporter journey"],
+    howWeHelp: [
+      { title: "Discovery & Audit", desc: "Impact narrative audit, donation journey review, trust signal check." },
+      { title: "Strategy & Direction", desc: "Story framework, visual direction, and templates roadmap." },
+      { title: "Design & Build", desc: "Donation/impact pages, social templates, and campaign creative packs." },
+      { title: "Refine & Scale", desc: "Ongoing creative support and system improvements for campaigns." },
+    ],
+    recommendedServices: ["Branding & Identity", "Web Design & Development", "Creative Strategy & Design", "Social Media Creatives"],
+  },
+};
 

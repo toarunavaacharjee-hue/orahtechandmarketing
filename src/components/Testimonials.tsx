@@ -27,7 +27,7 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-end justify-between gap-6"
+          className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
         >
           <div>
             <h2 className="font-heading text-3xl tracking-tight text-white sm:text-4xl">
@@ -68,7 +68,7 @@ export function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -14 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-8"
+              className="lg:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
             >
               <div className="flex items-start gap-4">
                 <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[#FF5C1A]/15 text-[#FF5C1A] ring-1 ring-[#FF5C1A]/30">
@@ -90,17 +90,17 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-8"
+            className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-6 sm:p-8"
           >
             <div className="font-heading text-lg text-white">What you get</div>
             <ul className="mt-5 grid gap-3 text-sm text-white/70">
               <li className="flex gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-                Weekly optimisation + clear next steps
+                Weekly creative cadence + clear next steps
               </li>
               <li className="flex gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-                Performance reporting you can trust
+                Clear review loops + reliable delivery
               </li>
               <li className="flex gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />

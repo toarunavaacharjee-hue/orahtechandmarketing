@@ -23,7 +23,7 @@ export function ProcessTimeline() {
           </p>
         </motion.div>
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {HOME.process.map((p, idx) => (
             <motion.div
               key={p.title}

@@ -3,33 +3,27 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
-type Budget = "Under ₹50k" | "₹50k–₹1L" | "₹1L–₹3L" | "₹3L+";
+type Budget = "Under $1k" | "$1k–$3k" | "$3k–$7.5k" | "$7.5k+" | "Not sure yet";
 type Service =
-  | "Performance Marketing"
-  | "SEO & Content"
-  | "Web & App Development"
-  | "AI Marketing Automation"
-  | "Social Media Management"
-  | "Branding & Design";
+  | "Creative Strategy & Design"
+  | "Branding & Identity"
+  | "Web Design & Development"
+  | "UI/UX for Products"
+  | "Social Media Creatives"
+  | "AI Creative Automation";
 
 const services: Service[] = [
-  "Performance Marketing",
-  "SEO & Content",
-  "Web & App Development",
-  "AI Marketing Automation",
-  "Social Media Management",
-  "Branding & Design",
+  "Creative Strategy & Design",
+  "Branding & Identity",
+  "Web Design & Development",
+  "UI/UX for Products",
+  "Social Media Creatives",
+  "AI Creative Automation",
 ];
 
-const budgets: Budget[] = ["Under ₹50k", "₹50k–₹1L", "₹1L–₹3L", "₹3L+"];
+const budgets: Budget[] = ["Under $1k", "$1k–$3k", "$3k–$7.5k", "$7.5k+", "Not sure yet"];
 
-function Field({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="grid gap-2 text-sm">
       <span className="font-semibold text-white/80">{label}</span>
@@ -47,32 +41,65 @@ function inputClassName() {
   ].join(" ");
 }
 
-export function ContactForm() {
+export function ContactForm({
+  intent,
+  defaultService,
+  defaultBudget,
+  messagePlaceholder,
+}: {
+  intent?: "audit" | "project";
+  defaultService?: Service;
+  defaultBudget?: Budget;
+  messagePlaceholder?: string;
+}) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [service, setService] = useState<string>(defaultService ?? "");
+  const [budget, setBudget] = useState<string>(defaultBudget ?? "");
+  const [error, setError] = useState<string>("");
 
   const placeholder = useMemo(
-    () => "Tell us about your goals, timeline, and what success looks like.",
-    []
+    () => messagePlaceholder ?? "Tell us what you need and what success looks like.",
+    [messagePlaceholder]
   );
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError("");
     setStatus("sending");
 
-    // Production: wire this to an email provider or CRM (Resend, Postmark, HubSpot, etc.)
-    await new Promise((r) => setTimeout(r, 700));
+    const form = e.currentTarget as HTMLFormElement;
+    const fd = new FormData(form);
+    const payload = Object.fromEntries(fd.entries());
+
+    const res = await fetch("/api/contacts", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      setStatus("idle");
+      setError("Something went wrong. Please try again or email us directly.");
+      return;
+    }
+
     setStatus("sent");
-    (e.currentTarget as HTMLFormElement).reset();
+
+    form.reset();
+    setService(defaultService ?? "");
+    setBudget(defaultBudget ?? "");
     window.setTimeout(() => setStatus("idle"), 3500);
   }
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4">
+      <input type="hidden" name="intent" value={intent ?? "project"} />
+
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Name">
           <input required name="name" className={inputClassName()} placeholder="Your full name" />
         </Field>
-        <Field label="Company">
+        <Field label="Company / Organisation">
           <input required name="company" className={inputClassName()} placeholder="Company name" />
         </Field>
       </div>
@@ -88,13 +115,24 @@ export function ContactForm() {
           />
         </Field>
         <Field label="Phone">
-          <input required name="phone" className={inputClassName()} placeholder="+91 XXXXX XXXXX" />
+          <input
+            required
+            name="phone"
+            className={inputClassName()}
+            placeholder="+1 (555) 000-0000 or +91 90000 00000"
+          />
         </Field>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Service interested in">
-          <select required name="service" className={inputClassName()}>
+          <select
+            required
+            name="service"
+            className={inputClassName()}
+            value={service}
+            onChange={(e) => setService(e.target.value)}
+          >
             <option value="" className="bg-[#050A18]">
               Select a service
             </option>
@@ -106,7 +144,13 @@ export function ContactForm() {
           </select>
         </Field>
         <Field label="Budget range">
-          <select required name="budget" className={inputClassName()}>
+          <select
+            required
+            name="budget"
+            className={inputClassName()}
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+          >
             <option value="" className="bg-[#050A18]">
               Select a budget
             </option>
@@ -143,13 +187,19 @@ export function ContactForm() {
           {status === "sending" ? "Sending…" : "Send Message →"}
         </button>
 
-        <motion.div
-          initial={{ opacity: 0, y: 6 }}
-          animate={status === "sent" ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
-          className="text-sm font-semibold text-[#00D4FF]"
-        >
-          Message sent. We’ll reply within 1 business day.
-        </motion.div>
+        <div className="min-h-6">
+          {error ? (
+            <div className="text-sm font-semibold text-[#FF5C1A]">{error}</div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={status === "sent" ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
+              className="text-sm font-semibold text-[#00D4FF]"
+            >
+              Message sent. We’ll reply within 1 business day.
+            </motion.div>
+          )}
+        </div>
       </div>
     </form>
   );

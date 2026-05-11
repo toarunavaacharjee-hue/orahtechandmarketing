@@ -7,7 +7,7 @@ import { HOME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Performance marketing, SEO, web development, AI automation, social media, and branding—everything you need to grow online.",
+    "Creative strategy, branding, UI/UX, social media creatives, and web design & development—everything you need to look premium online.",
 };
 
 export default function ServicesPage() {
@@ -21,11 +21,11 @@ export default function ServicesPage() {
               Full-service growth team
             </div>
             <h1 className="mt-6 font-heading text-4xl tracking-tight text-white sm:text-5xl">
-              Everything you need to grow online
+              Everything you need to look premium online
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/70">
-              Strategy, execution, and automation—delivered with speed, clarity, and
-              measurable outcomes.
+              Creative strategy, design systems, and modern web execution—delivered with speed,
+              clarity, and consistency.
             </p>
           </FadeIn>
         </div>
@@ -36,7 +36,7 @@ export default function ServicesPage() {
           <div className="grid gap-4 lg:grid-cols-2">
             {HOME.services.items.map((s, idx) => (
               <FadeIn key={s.title} delay={idx * 0.03}>
-                <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+                <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
                   <div className="flex items-start justify-between gap-6">
                     <div>
                       <div className="font-heading text-2xl text-white">{s.title}</div>

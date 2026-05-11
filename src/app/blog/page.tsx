@@ -1,36 +1,41 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getPayload } from "payload";
+import config from "@payload-config";
 
 import { FadeIn } from "@/components/FadeIn";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Growth notes, playbooks, and practical insights on performance marketing, SEO, and AI automation.",
+    "Design notes, creative playbooks, and practical insights on branding, content systems, and web experience.",
 };
 
-const posts = [
-  {
-    title: "How to scale Meta ads without killing ROAS",
-    tag: "Performance",
-    excerpt:
-      "A practical framework for creative testing, audience expansion, and landing-page alignment.",
-  },
-  {
-    title: "SEO that drives pipeline (not just traffic)",
-    tag: "SEO",
-    excerpt:
-      "Build topic clusters that match intent, strengthen internal linking, and measure conversion contribution.",
-  },
-  {
-    title: "AI automations to save 10+ hours/week in marketing ops",
-    tag: "AI Automation",
-    excerpt:
-      "Lead routing, reporting, and content workflows that reduce manual work while improving quality.",
-  },
-] as const;
+export default async function BlogPage() {
+  let docs: unknown[] = [];
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "posts",
+      where: { status: { equals: "published" } },
+      sort: "-publishedAt",
+      limit: 30,
+    });
+    docs = res.docs;
+  } catch {
+    // If DB isn't initialized yet (first boot), show empty state.
+    docs = [];
+  }
 
-export default function BlogPage() {
+  type PostListItem = {
+    id: string | number;
+    title: string;
+    excerpt: string;
+    tags?: { tag: string }[] | null;
+  };
+
   return (
     <div className="pt-10">
       <section className="pb-14">
@@ -44,7 +49,7 @@ export default function BlogPage() {
               Blog
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/70">
-              Short, actionable notes from the field—built for founders and marketing teams.
+              Short, actionable notes—built for founders, marketing teams, and design leads.
             </p>
           </FadeIn>
         </div>
@@ -52,25 +57,41 @@ export default function BlogPage() {
 
       <section className="pb-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-          <div className="grid gap-4 md:grid-cols-3">
-            {posts.map((p, idx) => (
-              <FadeIn key={p.title} delay={idx * 0.03}>
-                <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-7">
-                  <div className="inline-flex rounded-full bg-[#FF5C1A]/10 px-3 py-1 text-xs font-semibold text-[#FF5C1A] ring-1 ring-[#FF5C1A]/20">
-                    {p.tag}
-                  </div>
-                  <div className="mt-4 font-heading text-xl text-white">{p.title}</div>
-                  <p className="mt-3 text-sm leading-6 text-white/70">{p.excerpt}</p>
-                  <Link
-                    href="/contact"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#00D4FF] hover:text-white transition"
-                  >
-                    Get this implemented <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          {docs.length ? (
+            <div className="grid gap-4 md:grid-cols-3">
+              {(docs as PostListItem[]).map((p, idx) => {
+                const tag = p?.tags?.[0]?.tag ?? "Design";
+                return (
+                  <FadeIn key={p.id} delay={idx * 0.03}>
+                    <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+                      <div className="inline-flex rounded-full bg-[#FF5C1A]/10 px-3 py-1 text-xs font-semibold text-[#FF5C1A] ring-1 ring-[#FF5C1A]/20">
+                        {tag}
+                      </div>
+                      <div className="mt-4 font-heading text-xl text-white">{p.title}</div>
+                      <p className="mt-3 text-sm leading-6 text-white/70">{p.excerpt}</p>
+                      <Link
+                        href="/contact"
+                        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#00D4FF] hover:text-white transition"
+                      >
+                        Work with us <span aria-hidden="true">→</span>
+                      </Link>
+                    </div>
+                  </FadeIn>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-white/70">
+              No posts yet. Create your first post in{" "}
+              <Link
+                href="/orah-control"
+                className="text-[#00D4FF] hover:text-white transition font-semibold"
+              >
+                /orah-control
+              </Link>
+              .
+            </div>
+          )}
         </div>
       </section>
     </div>

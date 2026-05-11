@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #050a18;
   --foreground: #ffffff;
+
+  --font-body: "DM Sans";
+  --font-heading: "Syne";
 
   --muted: rgba(255, 255, 255, 0.7);
   --muted2: rgba(255, 255, 255, 0.55);

@@ -4,16 +4,16 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
-const filters = ["All", "E-commerce", "SaaS", "D2C", "Real Estate"] as const;
+const filters = ["All", "E-commerce", "SaaS", "D2C", "Real Estate", "NGO"] as const;
 type Filter = (typeof filters)[number];
 
 const cases = [
-  { industry: "E-commerce", metric: "+38% ROAS in 60 days", title: "High-AOV Store Scale-Up" },
-  { industry: "SaaS", metric: "2.4x SQL pipeline", title: "Demand Gen + Landing Pages" },
-  { industry: "D2C", metric: "₹18L monthly revenue lift", title: "Meta Creative Sprint" },
-  { industry: "Real Estate", metric: "-22% CPL", title: "Lead Quality Optimisation" },
-  { industry: "E-commerce", metric: "+41% organic traffic", title: "SEO Content Cluster Build" },
-  { industry: "SaaS", metric: "+29% conversion rate", title: "Website UX + CRO overhaul" },
+  { industry: "E-commerce", metric: "New product creative system", title: "Catalog Creative Refresh" },
+  { industry: "SaaS", metric: "Website redesign + UI kit", title: "Narrative-led Website Overhaul" },
+  { industry: "D2C", metric: "Brand system + templates", title: "Content Consistency Engine" },
+  { industry: "Real Estate", metric: "Brochure + landing page", title: "Premium Project Presentation" },
+  { industry: "E-commerce", metric: "PDP + landing page UX", title: "Conversion-focused Store UX" },
+  { industry: "NGO", metric: "Donation page redesign", title: "Trust-first Impact Storytelling" },
 ] as const;
 
 export function WorkGrid() {
@@ -47,10 +47,7 @@ export function WorkGrid() {
         })}
       </div>
 
-      <motion.div
-        layout
-        className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-      >
+      <motion.div layout className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((c) => (
           <motion.div
             key={`${c.title}-${c.metric}`}
@@ -68,7 +65,7 @@ export function WorkGrid() {
               </div>
               <div className="mt-4 font-heading text-lg text-white">{c.title}</div>
               <p className="mt-3 text-sm leading-6 text-white/70">
-                Strategy, creatives, landing pages, and tracking—aligned to a single growth KPI.
+                Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.
               </p>
               <Link
                 href="/contact"

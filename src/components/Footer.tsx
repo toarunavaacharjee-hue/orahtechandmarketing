@@ -18,8 +18,8 @@ export function Footer() {
               </div>
             </div>
             <p className="mt-4 max-w-md text-sm leading-6 text-white/65">
-              Tech-first, performance-obsessed growth partner for ambitious brands.
-              Strategy, execution, and automation—built to scale.
+              Creative-first partner for ambitious brands. Premium design, clear systems,
+              and modern web execution—built to scale.
             </p>
           </div>
 
@@ -29,10 +29,7 @@ export function Footer() {
               <ul className="mt-4 grid gap-2 text-sm">
                 {NAV_LINKS.filter((l) => l.href !== "/blog").map((l) => (
                   <li key={l.href}>
-                    <Link
-                      href={l.href}
-                      className="text-white/65 hover:text-white transition"
-                    >
+                    <Link href={l.href} className="text-white/65 hover:text-white transition">
                       {l.label}
                     </Link>
                   </li>
@@ -45,10 +42,7 @@ export function Footer() {
               <ul className="mt-4 grid gap-2 text-sm">
                 {HOME.services.items.map((s) => (
                   <li key={s.title}>
-                    <Link
-                      href="/services"
-                      className="text-white/65 hover:text-white transition"
-                    >
+                    <Link href="/services" className="text-white/65 hover:text-white transition">
                       {s.title}
                     </Link>
                   </li>
@@ -65,11 +59,6 @@ export function Footer() {
                     className="hover:text-white transition"
                   >
                     {HOME.footer.contact.email}
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+919000000000" className="hover:text-white transition">
-                    {HOME.footer.contact.phone}
                   </a>
                 </li>
                 <li>{HOME.footer.contact.city}</li>

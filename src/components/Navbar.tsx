@@ -77,7 +77,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/contact"
+            href="/free-audit"
             className={cx(
               "hidden md:inline-flex items-center justify-center",
               "h-10 rounded-full px-4 text-sm font-semibold",
@@ -155,7 +155,7 @@ export function Navbar() {
                 );
               })}
               <Link
-                href="/contact"
+                href="/free-audit"
                 onClick={() => setMobileOpen(false)}
                 className={cx(
                   "mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 text-sm font-semibold",
