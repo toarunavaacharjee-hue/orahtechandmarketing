@@ -4,7 +4,7 @@ import { BRAND, HOME, NAV_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-black/40">
+    <footer className="relative z-10 border-t border-white/5 bg-black/40">
       <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">

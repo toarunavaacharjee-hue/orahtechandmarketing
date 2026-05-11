@@ -120,8 +120,21 @@ function Icon({ name }: { name: string }) {
 
 export function ServicesGrid() {
   return (
-    <section className="relative py-20">
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+    <section className="relative overflow-hidden py-20">
+      <div
+        className="pointer-events-none absolute -right-24 top-1/4 h-[28rem] w-[28rem] rounded-full bg-[#FF5C1A]/[0.07] blur-3xl"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-[#00D4FF]/[0.06] blur-3xl"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[#FF5C1A] via-[#00D4FF]/60 to-transparent opacity-80"
+        aria-hidden="true"
+      />
+
+      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +142,10 @@ export function ServicesGrid() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl"
         >
-          <h2 className="font-heading text-3xl tracking-tight text-white sm:text-4xl">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/60 ring-1 ring-white/10">
+            Output
+          </div>
+          <h2 className="mt-4 font-heading text-3xl tracking-tight text-white sm:text-4xl">
             {HOME.services.title}
           </h2>
           <p className="mt-4 text-base leading-7 text-white/70">{HOME.services.subtitle}</p>
@@ -159,7 +175,7 @@ export function ServicesGrid() {
             >
               <Link
                 href="/services"
-                className="group relative block h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]"
+                className="group relative block h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.06] hover:shadow-[0_24px_60px_-28px_rgba(0,212,255,0.18)]"
               >
                 <div className="flex items-center gap-3">
                   <div className="grid h-11 w-11 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 text-white/90">

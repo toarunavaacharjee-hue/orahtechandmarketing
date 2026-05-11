@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { CreativeCollage } from "@/components/CreativeCollage";
 import { HOME } from "@/lib/constants";
 
 const fadeUp = {
@@ -14,7 +15,15 @@ const fadeUp = {
   },
 };
 
+function splitHeadline(full: string) {
+  const idx = full.indexOf(". ");
+  if (idx === -1) return { first: full, second: "" as string };
+  return { first: full.slice(0, idx + 1), second: full.slice(idx + 2) };
+}
+
 export function HeroSection() {
+  const { first, second } = splitHeadline(HOME.hero.headline);
+
   return (
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
@@ -34,8 +43,8 @@ export function HeroSection() {
         <div className="absolute inset-0 [background-image:radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:22px_22px] opacity-[0.18]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-6xl flex-col justify-center px-4 pb-8 pt-10 sm:px-6 sm:pt-14 sm:pb-10">
-        <div className="max-w-3xl">
+      <div className="relative mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-6xl flex-col justify-center px-4 pb-8 pt-10 sm:px-6 sm:pt-14 sm:pb-10 lg:grid lg:min-h-[calc(100vh-64px)] lg:grid-cols-12 lg:items-center lg:gap-10 lg:pb-14">
+        <div className="max-w-3xl lg:col-span-7">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -43,16 +52,22 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-white/75 ring-1 ring-white/10"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-            AI-forward growth + custom tech execution
+            Creative systems · campaigns · product UI
           </motion.div>
 
           <motion.h1
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-6 font-heading text-4xl leading-[1.05] tracking-tight text-white sm:text-6xl"
+            className="mt-6 font-heading text-4xl leading-[1.05] tracking-tight sm:text-6xl"
           >
-            {HOME.hero.headline}
+            <span className="text-white">{first}</span>
+            {second ? (
+              <>
+                {" "}
+                <span className="text-gradient-playful">{second}</span>
+              </>
+            ) : null}
           </motion.h1>
 
           <motion.p
@@ -83,6 +98,10 @@ export function HeroSection() {
               {HOME.hero.ctaSecondary}
             </Link>
           </motion.div>
+        </div>
+
+        <div className="hidden min-h-0 lg:col-span-5 lg:block">
+          <CreativeCollage />
         </div>
       </div>
     </section>

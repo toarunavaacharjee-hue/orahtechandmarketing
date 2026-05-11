@@ -36,9 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-[#050A18] text-white">
+      <body className="relative isolate min-h-full flex flex-col bg-[#050A18] text-white">
+        <div className="agency-grain" aria-hidden="true" />
         <Navbar />
-        <main className="flex-1 pt-16">
+        <main className="relative z-10 flex-1 pt-16">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
