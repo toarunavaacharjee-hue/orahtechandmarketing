@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+
+import { ProcessFlowDiagram } from "@/components/diagrams/ProcessFlowDiagram";
 import { HOME } from "@/lib/constants";
 
 export function ProcessTimeline() {
@@ -22,6 +24,13 @@ export function ProcessTimeline() {
             chaos.
           </p>
         </motion.div>
+
+        <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.02] p-4 sm:p-6">
+          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
+            Engagement map
+          </p>
+          <ProcessFlowDiagram />
+        </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {HOME.process.map((p, idx) => (

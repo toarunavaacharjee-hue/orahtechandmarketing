@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { FadeIn } from "@/components/FadeIn";
+import { PlaybookLoopDiagram } from "@/components/diagrams/PlaybookLoopDiagram";
 import { INDUSTRIES, type IndustrySlug } from "@/lib/constants";
 
 type Props = { params: Promise<{ industry: string }> };
@@ -33,32 +34,42 @@ export default async function IndustryPage({ params }: Props) {
     <div className="pt-10">
       <section className="pb-14">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-          <FadeIn>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-white/75 ring-1 ring-white/10">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-              Industry playbook
-            </div>
-            <h1 className="mt-6 font-heading text-4xl tracking-tight text-white sm:text-5xl">
-              {data.name}
-            </h1>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-white/70">
-              {data.hero.subtext}
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/free-audit"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[#FF5C1A] px-6 text-sm font-semibold text-black hover:brightness-110 transition"
-              >
-                Get a Free Audit →
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold text-white ring-1 ring-white/15 hover:ring-white/30 hover:bg-white/5 transition"
-              >
-                Talk to us
-              </Link>
-            </div>
-          </FadeIn>
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+            <FadeIn className="min-w-0 lg:col-span-7">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-white/75 ring-1 ring-white/10">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
+                Industry playbook
+              </div>
+              <h1 className="mt-6 font-heading text-4xl tracking-tight text-white sm:text-5xl">
+                {data.name}
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-7 text-white/70">
+                {data.hero.subtext}
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/free-audit"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#FF5C1A] px-6 text-sm font-semibold text-black hover:brightness-110 transition"
+                >
+                  Get a Free Audit →
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold text-white ring-1 ring-white/15 hover:ring-white/30 hover:bg-white/5 transition"
+                >
+                  Talk to us
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.06} className="min-w-0 lg:col-span-5">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+                <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
+                  Playbook rhythm
+                </p>
+                <PlaybookLoopDiagram className="mt-2" />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

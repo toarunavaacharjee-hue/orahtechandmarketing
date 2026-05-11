@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { FadeIn } from "@/components/FadeIn";
 import { ContactForm } from "@/components/ContactForm";
+import { ContactJourneyDiagram } from "@/components/diagrams/ContactJourneyDiagram";
 
 export const metadata: Metadata = {
   title: "Free Audit",
@@ -37,7 +38,13 @@ export default function FreeAuditPage() {
             <FadeIn className="min-w-0 lg:col-span-5">
               <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8">
                 <div className="font-heading text-2xl text-white">What you’ll get</div>
-                <ul className="mt-6 grid gap-4 text-sm text-white/70">
+                <p className="mt-3 text-xs leading-5 text-white/50">
+                  From request to kickoff—same cadence as a project inquiry.
+                </p>
+                <div className="mt-6 flex justify-center border-b border-white/10 pb-8">
+                  <ContactJourneyDiagram />
+                </div>
+                <ul className="mt-2 grid gap-4 text-sm text-white/70">
                   {[
                     "A brand consistency check (fonts, spacing, visuals, tone, templates).",
                     "A website UX audit (clarity, trust signals, navigation, mobile experience).",

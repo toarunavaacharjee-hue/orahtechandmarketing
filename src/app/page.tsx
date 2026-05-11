@@ -7,6 +7,8 @@ import { StatsSection } from "@/components/StatsSection";
 import { Testimonials } from "@/components/Testimonials";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { CTABanner } from "@/components/CTABanner";
+import { CreativePhotoStrip } from "@/components/CreativePhotoStrip";
+import { CreativeStackDiagram } from "@/components/diagrams/CreativeStackDiagram";
 import { INDUSTRIES } from "@/lib/constants";
 
 export default function HomePage() {
@@ -14,6 +16,41 @@ export default function HomePage() {
     <div className="flex flex-col">
       <HeroSection />
       <MarqueeStrip />
+
+      <section className="border-y border-white/5 bg-black/25 py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF]">
+                How deliverables stack
+              </p>
+              <h2 className="mt-3 font-heading text-3xl tracking-tight text-white sm:text-4xl">
+                Brand, web, and campaign layers—designed to work together
+              </h2>
+              <p className="mt-4 text-base leading-7 text-white/70">
+                We map what ships first, what becomes a reusable system, and what scales across
+                channels—so your creative stays consistent as volume grows.
+              </p>
+              <div className="mt-8">
+                <CreativeStackDiagram />
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
+                Studio moodboard
+              </p>
+              <p className="mt-3 text-sm leading-6 text-white/60">
+                Editorial stills for atmosphere (not client deliverables). Swap these for your own
+                case photography anytime.
+              </p>
+              <div className="mt-6">
+                <CreativePhotoStrip />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ServicesGrid />
       <StatsSection />
 

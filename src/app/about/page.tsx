@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { FadeIn } from "@/components/FadeIn";
+import { PlaybookLoopDiagram } from "@/components/diagrams/PlaybookLoopDiagram";
 
 export const metadata: Metadata = {
   title: "About",
@@ -45,6 +46,30 @@ export default function AboutPage() {
               means faster iteration, better data, and compounding results.
             </p>
           </FadeIn>
+        </div>
+      </section>
+
+      <section className="border-y border-white/5 bg-black/20 py-12 sm:py-16">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <FadeIn>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF]">
+                How we work together
+              </p>
+              <h2 className="mt-3 font-heading text-2xl tracking-tight text-white sm:text-3xl">
+                A tight loop: discover, align, design, deliver
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-white/70">
+                You stay close to direction and milestones—we bring craft, systems, and momentum.
+                No black boxes: async updates, shared files, and clear sign-off points.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.05}>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+                <PlaybookLoopDiagram />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

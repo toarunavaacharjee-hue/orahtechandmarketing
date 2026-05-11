@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import { FadeIn } from "@/components/FadeIn";
+import { CreativeStackDiagram } from "@/components/diagrams/CreativeStackDiagram";
+import { ProcessFlowDiagram } from "@/components/diagrams/ProcessFlowDiagram";
 import { HOME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -28,6 +30,34 @@ export default function ServicesPage() {
               clarity, and consistency.
             </p>
           </FadeIn>
+        </div>
+      </section>
+
+      <section className="border-y border-white/5 bg-black/20 py-12 sm:py-16">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <FadeIn>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5C1A]">
+                Systems, not one-offs
+              </p>
+              <h2 className="mt-3 font-heading text-2xl tracking-tight text-white sm:text-3xl">
+                One creative stack—so every touchpoint feels like the same brand
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-white/70">
+                Guidelines feed templates, templates feed web and social, and web patterns feed
+                product UI—fewer mismatches, faster reviews, cleaner launches.
+              </p>
+              <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-4 sm:p-6">
+                <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
+                  Typical flow
+                </p>
+                <ProcessFlowDiagram />
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.05}>
+              <CreativeStackDiagram className="flex justify-center lg:justify-end" />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
