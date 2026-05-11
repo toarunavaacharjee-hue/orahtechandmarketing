@@ -28,12 +28,12 @@ export function Navbar() {
   return (
     <header
       className={cx(
-        "sticky top-0 z-50 w-full",
+        "fixed top-0 z-50 w-full",
         "border-b border-white/5",
         scrolled ? "backdrop-blur-xl bg-black/30" : "bg-transparent"
       )}
     >
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
           className="group inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]/70 rounded"
@@ -42,11 +42,11 @@ export function Navbar() {
             <span className="h-4 w-4 rounded bg-[#FF5C1A]" />
             <span className="pointer-events-none absolute -inset-1 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-70 bg-[#00D4FF]/20" />
           </span>
-          <span className="flex flex-col leading-tight">
-            <span className="font-heading text-sm tracking-tight text-white">
+          <span className="flex min-w-0 flex-col leading-tight">
+            <span className="font-heading text-sm tracking-tight text-white truncate max-w-[12.5rem] sm:max-w-none">
               {BRAND.name}
             </span>
-            <span className="text-xs text-white/60">{BRAND.tagline}</span>
+            <span className="hidden sm:block text-xs text-white/60 truncate">{BRAND.tagline}</span>
           </span>
         </Link>
 

@@ -34,7 +34,7 @@ export function HeroSection() {
         <div className="absolute inset-0 [background-image:radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:22px_22px] opacity-[0.18]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[calc(100vh-88px)] w-full max-w-6xl flex-col justify-center px-4 pb-14 pt-24 sm:px-6 sm:pt-28">
+      <div className="relative mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-6xl flex-col justify-center px-4 pb-14 pt-10 sm:px-6 sm:pt-14">
         <div className="max-w-3xl">
           <motion.div
             variants={fadeUp}
@@ -91,22 +91,35 @@ export function HeroSection() {
           transition={{ delay: 0.25, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mt-14"
         >
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <div className="relative flex gap-10 px-6 py-4">
+          <div className="rounded-2xl border border-white/10 bg-white/5">
+            <div className="relative flex gap-10 px-4 py-4 sm:px-6">
               <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#050A18] to-transparent" />
               <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#050A18] to-transparent" />
-              <motion.div
-                className="flex min-w-full flex-none items-center gap-10 text-sm font-semibold text-white/80"
-                animate={{ x: ["0%", "-50%"] }}
-                transition={{ duration: 18, ease: "linear", repeat: Infinity }}
-              >
-                {[...HOME.hero.ticker, ...HOME.hero.ticker].map((t, i) => (
-                  <div key={`${t}-${i}`} className="flex items-center gap-3">
+              {/* Mobile: wrap so text never gets cut */}
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm font-semibold text-white/80 sm:hidden">
+                {HOME.hero.ticker.map((t) => (
+                  <div key={t} className="flex items-center gap-3">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#FF5C1A]" />
                     <span>{t}</span>
                   </div>
                 ))}
-              </motion.div>
+              </div>
+
+              {/* Desktop: animated marquee */}
+              <div className="hidden sm:block overflow-hidden w-full">
+                <motion.div
+                  className="flex w-max items-center gap-10 pr-10 text-sm font-semibold text-white/80"
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{ duration: 18, ease: "linear", repeat: Infinity }}
+                >
+                  {[...HOME.hero.ticker, ...HOME.hero.ticker].map((t, i) => (
+                    <div key={`${t}-${i}`} className="flex items-center gap-3 whitespace-nowrap">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#FF5C1A]" />
+                      <span>{t}</span>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </div>
         </motion.div>

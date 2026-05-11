@@ -13,7 +13,7 @@ export function MarqueeStrip() {
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#050A18] to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#050A18] to-transparent" />
         <motion.div
-          className="flex gap-6 py-4"
+          className="flex w-max gap-6 py-4 pr-6"
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 22, ease: "linear", repeat: Infinity }}
         >
