@@ -7,7 +7,6 @@ import { StatsSection } from "@/components/StatsSection";
 import { Testimonials } from "@/components/Testimonials";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { CTABanner } from "@/components/CTABanner";
-import { CreativePhotoStrip } from "@/components/CreativePhotoStrip";
 import { CreativeStackDiagram } from "@/components/diagrams/CreativeStackDiagram";
 import { INDUSTRIES } from "@/lib/constants";
 
@@ -36,16 +35,33 @@ export default function HomePage() {
               </div>
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-                Studio moodboard
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5C1A]">
+                What gets delivered
               </p>
-              <p className="mt-3 text-sm leading-6 text-white/60">
-                Built-in SVG moodboards for layout (no external photos). Replace files in{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-white/80">/public/moodboard</code>{" "}
-                with your own shots when you have them.
+              <p className="mt-3 text-sm leading-6 text-white/65">
+                Every project ships production-ready assets—not just files, but usable systems your team can run independently.
               </p>
-              <div className="mt-6">
-                <CreativePhotoStrip />
+              <div className="mt-6 grid grid-cols-2 gap-3">
+                {[
+                  { label: "Brand Kit", desc: "Logo · colors · type · guidelines", accent: "#FF5C1A" },
+                  { label: "Design System", desc: "Components · tokens · templates", accent: "#00D4FF" },
+                  { label: "Website", desc: "Landing pages + UI, conversion-ready", accent: "#7c6cff" },
+                  { label: "Social Pack", desc: "Creatives · carousels · reel covers", accent: "#FF5C1A" },
+                  { label: "Pitch Deck", desc: "Investor or sales-ready presentation", accent: "#00D4FF" },
+                  { label: "AI Workflows", desc: "Brief → variant → publish automation", accent: "#b8ff6c" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-white/20 hover:bg-white/[0.05]"
+                  >
+                    <div
+                      className="h-[2px] w-8 rounded-full"
+                      style={{ background: item.accent }}
+                    />
+                    <div className="mt-3 font-heading text-sm text-white">{item.label}</div>
+                    <div className="mt-1 text-xs leading-5 text-white/50">{item.desc}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

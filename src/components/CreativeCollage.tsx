@@ -3,65 +3,158 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 const layers = [
-  { label: "Launch film", angle: -6, x: "8%", y: "6%", delay: 0 },
-  { label: "Social kit", angle: 4, x: "42%", y: "0%", delay: 0.12 },
-  { label: "Pitch deck", angle: -3, x: "18%", y: "48%", delay: 0.24 },
-  { label: "Web UI", angle: 5, x: "52%", y: "44%", delay: 0.36 },
+  {
+    label: "Launch film",
+    tag: "Video",
+    angle: -6,
+    x: "8%",
+    y: "6%",
+    delay: 0,
+    fg: "#FF5C1A",
+    bodyBg: "linear-gradient(145deg, rgba(255,92,26,0.55) 0%, rgba(255,92,26,0.12) 45%, rgba(5,10,24,0.96) 100%)",
+    border: "rgba(255,92,26,0.3)",
+    bottomBg: "rgba(5,10,24,0.82)",
+    bottomBorder: "rgba(255,92,26,0.22)",
+  },
+  {
+    label: "Social kit",
+    tag: "Social",
+    angle: 4,
+    x: "42%",
+    y: "0%",
+    delay: 0.12,
+    fg: "#00D4FF",
+    bodyBg: "linear-gradient(145deg, rgba(0,212,255,0.45) 0%, rgba(0,212,255,0.1) 45%, rgba(5,10,24,0.96) 100%)",
+    border: "rgba(0,212,255,0.25)",
+    bottomBg: "rgba(5,10,24,0.82)",
+    bottomBorder: "rgba(0,212,255,0.18)",
+  },
+  {
+    label: "Pitch deck",
+    tag: "Deck",
+    angle: -3,
+    x: "18%",
+    y: "48%",
+    delay: 0.24,
+    fg: "#7c6cff",
+    bodyBg: "linear-gradient(145deg, rgba(124,108,255,0.5) 0%, rgba(124,108,255,0.12) 45%, rgba(5,10,24,0.96) 100%)",
+    border: "rgba(124,108,255,0.28)",
+    bottomBg: "rgba(5,10,24,0.82)",
+    bottomBorder: "rgba(124,108,255,0.2)",
+  },
+  {
+    label: "Web UI",
+    tag: "Web",
+    angle: 5,
+    x: "52%",
+    y: "44%",
+    delay: 0.36,
+    fg: "#b8ff6c",
+    bodyBg: "linear-gradient(145deg, rgba(0,212,255,0.32) 0%, rgba(184,255,108,0.18) 45%, rgba(5,10,24,0.96) 100%)",
+    border: "rgba(184,255,108,0.22)",
+    bottomBg: "rgba(5,10,24,0.82)",
+    bottomBorder: "rgba(184,255,108,0.16)",
+  },
 ] as const;
 
 export function CreativeCollage() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className="pointer-events-none relative hidden h-[min(28rem,52vh)] select-none lg:block" aria-hidden="true">
-      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-[#00D4FF]/10 via-transparent to-[#FF5C1A]/10 ring-1 ring-white/10" />
-      <div className="absolute inset-6 rounded-3xl border border-dashed border-white/15" />
+    <div
+      className="pointer-events-none relative hidden h-[min(28rem,52vh)] select-none lg:block"
+      aria-hidden="true"
+    >
+      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-[#00D4FF]/8 via-transparent to-[#FF5C1A]/8 ring-1 ring-white/8" />
+      <div className="absolute inset-6 rounded-3xl border border-dashed border-white/10" />
 
       {layers.map((layer) => (
         <motion.div
           key={layer.label}
           className="absolute w-[46%]"
           style={{ left: layer.x, top: layer.y, rotate: `${layer.angle}deg` }}
-          initial={{ opacity: 0, y: 16, scale: 0.96 }}
+          initial={{ opacity: 0, y: 20, scale: 0.94 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.35 + layer.delay, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.35 + layer.delay, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            className="relative overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-br from-white/[0.12] to-white/[0.02] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.85)] ring-1 ring-white/10"
-            animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
+            className="relative overflow-hidden rounded-2xl shadow-[0_24px_56px_-18px_rgba(0,0,0,0.9)]"
+            style={{ border: `1px solid ${layer.border}` }}
+            animate={reduceMotion ? undefined : { y: [0, -5, 0] }}
             transition={
               reduceMotion
                 ? undefined
-                : {
-                    duration: 5 + layer.delay * 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: layer.delay,
-                  }
+                : { duration: 5 + layer.delay * 4, repeat: Infinity, ease: "easeInOut", delay: layer.delay }
             }
           >
-            <div className="aspect-[4/5] bg-[linear-gradient(135deg,rgba(255,92,26,0.35),transparent_45%,rgba(0,212,255,0.25))]" />
-            <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-black/50 px-3 py-2 backdrop-blur-sm">
-              <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50">
+            {/* Card body */}
+            <div
+              className="relative aspect-[4/5]"
+              style={{ background: layer.bodyBg }}
+            >
+              {/* Category badge */}
+              <div
+                className="absolute left-3 top-3 rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em] ring-1"
+                style={{
+                  color: layer.fg,
+                  backgroundColor: `${layer.fg}18`,
+                  boxShadow: `0 0 0 1px ${layer.fg}30`,
+                }}
+              >
+                {layer.tag}
+              </div>
+              {/* Subtle grid pattern */}
+              <div
+                className="absolute inset-0 opacity-[0.07]"
+                style={{
+                  backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px)",
+                  backgroundSize: "18px 18px",
+                }}
+              />
+              {/* Corner glow */}
+              <div
+                className="absolute right-0 top-0 h-20 w-20 rounded-bl-3xl opacity-30"
+                style={{
+                  background: `radial-gradient(circle at top right, ${layer.fg}, transparent 70%)`,
+                }}
+              />
+            </div>
+
+            {/* Label bar */}
+            <div
+              className="absolute inset-x-0 bottom-0 px-3 py-2.5 backdrop-blur-sm"
+              style={{
+                borderTop: `1px solid ${layer.bottomBorder}`,
+                backgroundColor: layer.bottomBg,
+              }}
+            >
+              <div
+                className="text-[9px] font-bold uppercase tracking-[0.22em]"
+                style={{ color: layer.fg, opacity: 0.75 }}
+              >
                 Collateral
               </div>
-              <div className="font-heading text-xs font-semibold text-white">{layer.label}</div>
+              <div className="font-heading text-[11px] font-semibold text-white">{layer.label}</div>
             </div>
           </motion.div>
         </motion.div>
       ))}
 
+      {/* Ambient glows */}
       <motion.div
-        className="absolute -right-2 top-1/3 h-24 w-24 rounded-full bg-[#FF5C1A]/20 blur-2xl"
-        animate={reduceMotion ? undefined : { scale: [1, 1.15, 1], opacity: [0.35, 0.55, 0.35] }}
+        className="absolute -right-2 top-1/3 h-28 w-28 rounded-full bg-[#FF5C1A]/15 blur-3xl"
+        animate={reduceMotion ? undefined : { scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={reduceMotion ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute left-1/4 bottom-6 h-20 w-20 rounded-full bg-[#00D4FF]/15 blur-2xl"
-        animate={reduceMotion ? undefined : { scale: [1, 1.2, 1], opacity: [0.25, 0.45, 0.25] }}
-        transition={
-          reduceMotion ? undefined : { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }
-        }
+        className="absolute left-1/4 bottom-6 h-24 w-24 rounded-full bg-[#00D4FF]/12 blur-3xl"
+        animate={reduceMotion ? undefined : { scale: [1, 1.25, 1], opacity: [0.2, 0.4, 0.2] }}
+        transition={reduceMotion ? undefined : { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      <motion.div
+        className="absolute left-1/2 top-1/4 h-16 w-16 rounded-full bg-[#7c6cff]/15 blur-2xl"
+        animate={reduceMotion ? undefined : { scale: [1, 1.3, 1], opacity: [0.15, 0.35, 0.15] }}
+        transition={reduceMotion ? undefined : { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
     </div>
   );
