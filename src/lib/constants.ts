@@ -1,3 +1,9 @@
+export const AI_WORKBENCH = {
+  url: "https://aimarketingworkbench.com",
+  name: "AI Marketing Workbench",
+  tagline: "Your complete marketing OS—powered by AI",
+} as const;
+
 export const BRAND = {
   name: "Orah Tech and Marketing",
   domain: "orahtechandmarketing.com",
