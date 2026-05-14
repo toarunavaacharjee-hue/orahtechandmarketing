@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 
 import { HOME } from "@/lib/constants";
 
@@ -119,6 +120,8 @@ function Icon({ name }: { name: string }) {
 }
 
 export function ServicesGrid() {
+  const [expanded, setExpanded] = useState<string | null>(null);
+
   return (
     <section className="relative overflow-hidden py-20">
       <div
@@ -161,42 +164,106 @@ export function ServicesGrid() {
           }}
           className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {HOME.services.items.map((s) => (
-            <motion.div
-              key={s.title}
-              variants={{
-                hidden: { opacity: 0, y: 18 },
-                show: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-                },
-              }}
-            >
-              <Link
-                href="/services"
-                className="group relative block h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.06] hover:shadow-[0_24px_60px_-28px_rgba(0,212,255,0.18)]"
+          {HOME.services.items.map((s) => {
+            const isOpen = expanded === s.title;
+            return (
+              <motion.div
+                key={s.title}
+                variants={{
+                  hidden: { opacity: 0, y: 18 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 text-white/90">
-                    <Icon name={s.icon} />
+                <button
+                  type="button"
+                  onClick={() => setExpanded(isOpen ? null : s.title)}
+                  className={[
+                    "group relative w-full rounded-2xl border p-6 text-left transition duration-300",
+                    isOpen
+                      ? "border-[#FF5C1A]/30 bg-[#FF5C1A]/5 shadow-[0_24px_60px_-28px_rgba(255,92,26,0.18)]"
+                      : "border-white/10 bg-white/[0.03] hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.06] hover:shadow-[0_24px_60px_-28px_rgba(0,212,255,0.18)]",
+                  ].join(" ")}
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={[
+                        "grid h-11 w-11 place-items-center rounded-xl ring-1 transition",
+                        isOpen
+                          ? "bg-[#FF5C1A]/10 ring-[#FF5C1A]/30 text-[#FF5C1A]"
+                          : "bg-white/5 ring-white/10 text-white/90",
+                      ].join(" ")}
+                    >
+                      <Icon name={s.icon} />
+                    </div>
+                    <div className="font-heading text-lg text-white">{s.title}</div>
+                    <span
+                      className={[
+                        "ml-auto text-sm text-white/40 transition-transform duration-300",
+                        isOpen ? "rotate-180" : "",
+                      ].join(" ")}
+                      aria-hidden="true"
+                    >
+                      ↓
+                    </span>
                   </div>
-                  <div className="font-heading text-lg text-white">{s.title}</div>
-                </div>
-                <p className="mt-4 text-sm leading-6 text-white/70">{s.desc}</p>
-                <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#FF5C1A] opacity-0 transition group-hover:opacity-100">
-                  Learn more <span aria-hidden="true">→</span>
-                </div>
+                  <p className="mt-4 text-sm leading-6 text-white/70">{s.desc}</p>
 
-                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100">
-                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#00D4FF]/15 via-transparent to-[#FF5C1A]/12 blur-xl" />
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="bullets"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <ul className="mt-4 space-y-2 border-t border-white/10 pt-4">
+                          {s.bullets.map((b) => (
+                            <li key={b} className="flex items-start gap-2 text-sm text-white/60">
+                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#FF5C1A]" />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {!isOpen && (
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#FF5C1A] opacity-0 transition group-hover:opacity-100">
+                      See details <span aria-hidden="true">→</span>
+                    </div>
+                  )}
+
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100">
+                    <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#00D4FF]/15 via-transparent to-[#FF5C1A]/12 blur-xl" />
+                  </div>
+                </button>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 flex justify-center"
+        >
+          <Link
+            href="/services"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-white/5 px-6 text-sm font-semibold text-white ring-1 ring-white/15 hover:bg-white/10 hover:ring-white/25 transition"
+          >
+            Explore all services →
+          </Link>
         </motion.div>
       </div>
     </section>
   );
 }
-

@@ -8,6 +8,17 @@ function clampIndex(i: number, len: number) {
   return ((i % len) + len) % len;
 }
 
+const AVATAR_COLORS = ["#FF5C1A", "#00D4FF", "#7c6cff"];
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
 export function Testimonials() {
   const items = useMemo(() => HOME.testimonials, []);
   const [active, setActive] = useState(0);
@@ -17,7 +28,9 @@ export function Testimonials() {
     return () => window.clearInterval(id);
   }, []);
 
-  const t = items[clampIndex(active, items.length)];
+  const idx = clampIndex(active, items.length);
+  const t = items[idx];
+  const color = AVATAR_COLORS[idx % AVATAR_COLORS.length];
 
   return (
     <section className="py-20">
@@ -39,18 +52,18 @@ export function Testimonials() {
           </div>
 
           <div className="hidden items-center gap-2 sm:flex">
-            {items.map((_, idx) => (
+            {items.map((_, i) => (
               <button
-                key={idx}
+                key={i}
                 type="button"
-                onClick={() => setActive(idx)}
-                aria-label={`Show testimonial ${idx + 1}`}
+                onClick={() => setActive(i)}
+                aria-label={`Show testimonial ${i + 1}`}
                 className="rounded-full p-2"
               >
                 <span
                   className={[
                     "block h-1.5 w-7 rounded-full transition",
-                    clampIndex(active, items.length) === idx
+                    clampIndex(active, items.length) === i
                       ? "bg-[#FF5C1A]"
                       : "bg-white/15 hover:bg-white/25",
                   ].join(" ")}
@@ -71,8 +84,17 @@ export function Testimonials() {
               className="lg:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
             >
               <div className="flex items-start gap-4">
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[#FF5C1A]/15 text-[#FF5C1A] ring-1 ring-[#FF5C1A]/30">
-                  <span className="font-heading text-3xl leading-none">“</span>
+                <div
+                  className="grid h-12 w-12 shrink-0 place-items-center rounded-full ring-1 transition-all duration-500"
+                  style={{
+                    background: `${color}22`,
+                    color,
+                    boxShadow: `0 0 0 1px ${color}44`,
+                  }}
+                >
+                  <span className="font-heading text-sm font-bold leading-none">
+                    {getInitials(t.name)}
+                  </span>
                 </div>
                 <div>
                   <p className="text-base leading-7 text-white/75">{t.quote}</p>
@@ -118,4 +140,3 @@ export function Testimonials() {
     </section>
   );
 }
-

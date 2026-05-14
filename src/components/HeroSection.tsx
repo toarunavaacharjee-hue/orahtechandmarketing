@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { CreativeCollage } from "@/components/CreativeCollage";
-import { HOME } from "@/lib/constants";
+import { HOME, INDUSTRIES } from "@/lib/constants";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -97,6 +97,28 @@ export function HeroSection() {
             >
               {HOME.hero.ctaSecondary}
             </Link>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="mt-7"
+          >
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
+              Industries we serve
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {Object.values(INDUSTRIES).map((ind) => (
+                <Link
+                  key={ind.slug}
+                  href={`/industries/${ind.slug}`}
+                  className="rounded-full bg-white/[0.04] px-3 py-1 text-xs font-medium text-white/55 ring-1 ring-white/8 transition hover:bg-white/[0.08] hover:text-white/80 hover:ring-white/15"
+                >
+                  {ind.name}
+                </Link>
+              ))}
+            </div>
           </motion.div>
         </div>
 

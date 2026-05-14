@@ -3,6 +3,8 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { SpotlightCursor } from "@/components/SpotlightCursor";
 import { BRAND } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -37,6 +39,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="relative isolate min-h-full flex flex-col bg-[#050A18] text-white">
+        <ScrollProgress />
+        <SpotlightCursor />
         <div className="agency-grain" aria-hidden="true" />
         <Navbar />
         <main className="relative z-10 flex-1 pt-16">
