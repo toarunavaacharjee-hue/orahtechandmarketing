@@ -9,7 +9,6 @@ import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { CTABanner } from "@/components/CTABanner";
 import { CreativePhotoStrip } from "@/components/CreativePhotoStrip";
 import { CreativeStackDiagram } from "@/components/diagrams/CreativeStackDiagram";
-import { AIWorkbenchBanner } from "@/components/AIWorkbenchBanner";
 import { INDUSTRIES } from "@/lib/constants";
 
 export default function HomePage() {
@@ -54,7 +53,6 @@ export default function HomePage() {
       </section>
 
       <ServicesGrid />
-      <AIWorkbenchBanner />
       <StatsSection />
 
       <section className="py-20">

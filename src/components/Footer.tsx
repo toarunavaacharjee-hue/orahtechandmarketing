@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-import { BRAND, HOME, NAV_LINKS, AI_WORKBENCH } from "@/lib/constants";
+import { BRAND, HOME, NAV_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
     <footer className="relative z-10 border-t border-white/5 bg-black/40">
       <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-4">
+          <div className="md:col-span-5">
             <div className="flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-2xl bg-white/5 ring-1 ring-white/10">
                 <div className="h-4 w-4 rounded bg-[#FF5C1A]" />
@@ -23,7 +23,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-4 md:col-span-8">
+          <div className="grid gap-10 sm:grid-cols-3 md:col-span-7">
             <div>
               <div className="text-sm font-semibold text-white">Quick links</div>
               <ul className="mt-4 grid gap-2 text-sm">
@@ -47,43 +47,6 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-sm font-semibold text-white">Products</div>
-              <ul className="mt-4 grid gap-2 text-sm">
-                <li>
-                  <a
-                    href={AI_WORKBENCH.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[#b8ff6c]/80 hover:text-[#b8ff6c] transition"
-                  >
-                    AI Marketing Workbench
-                    <span className="text-xs opacity-60">↗</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`${AI_WORKBENCH.url}/pricing`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/65 hover:text-white transition"
-                  >
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`${AI_WORKBENCH.url}/signup`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/65 hover:text-white transition"
-                  >
-                    Try for free
-                  </a>
-                </li>
               </ul>
             </div>
 
