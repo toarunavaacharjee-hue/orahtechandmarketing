@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-import { BRAND, NAV_LINKS } from "@/lib/constants";
+import { BRAND, NAV_LINKS, AI_WORKBENCH } from "@/lib/constants";
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -73,6 +73,15 @@ export function Navbar() {
               </Link>
             );
           })}
+          <a
+            href={AI_WORKBENCH.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#7c6cff]/15 px-3 py-1 text-xs font-semibold text-[#b8ff6c] ring-1 ring-[#7c6cff]/30 hover:bg-[#7c6cff]/25 transition"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-[#b8ff6c]" />
+            AI Workbench
+          </a>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -154,6 +163,16 @@ export function Navbar() {
                   </Link>
                 );
               })}
+              <a
+                href={AI_WORKBENCH.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-between rounded-xl bg-[#7c6cff]/10 px-4 py-3 text-sm font-semibold text-[#b8ff6c] ring-1 ring-[#7c6cff]/20 hover:bg-[#7c6cff]/20 transition"
+              >
+                <span>AI Marketing Workbench ↗</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-[#b8ff6c]" />
+              </a>
               <Link
                 href="/free-audit"
                 onClick={() => setMobileOpen(false)}
