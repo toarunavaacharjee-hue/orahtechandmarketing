@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getPayload } from "payload";
+import config from "@payload-config";
 
 import { HeroSection } from "@/components/HeroSection";
 import { MarqueeStrip } from "@/components/MarqueeStrip";
@@ -10,7 +12,31 @@ import { CTABanner } from "@/components/CTABanner";
 import { CreativeStackDiagram } from "@/components/diagrams/CreativeStackDiagram";
 import { INDUSTRIES } from "@/lib/constants";
 
-export default function HomePage() {
+export const dynamic = "force-dynamic";
+
+type BlogPreviewItem = {
+  id: string | number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  tags?: { tag: string }[] | null;
+};
+
+export default async function HomePage() {
+  let latestPosts: BlogPreviewItem[] = [];
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "posts",
+      where: { status: { equals: "published" } },
+      sort: "-publishedAt",
+      limit: 3,
+    });
+    latestPosts = res.docs as BlogPreviewItem[];
+  } catch {
+    latestPosts = [];
+  }
+
   return (
     <div className="flex flex-col">
       <HeroSection />
@@ -133,8 +159,52 @@ export default function HomePage() {
 
       <Testimonials />
       <ProcessTimeline />
+
+      {latestPosts.length > 0 && (
+        <section className="border-t border-white/5 py-20">
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF]">
+                  From the blog
+                </p>
+                <h2 className="mt-2 font-heading text-3xl tracking-tight text-white sm:text-4xl">
+                  Latest Insights
+                </h2>
+              </div>
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#00D4FF] hover:text-white transition"
+              >
+                All posts <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {latestPosts.map((p) => {
+                const tag = p.tags?.[0]?.tag ?? "Design";
+                return (
+                  <Link
+                    key={p.id}
+                    href={`/blog/${p.slug}`}
+                    className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-white/20 hover:bg-white/[0.05]"
+                  >
+                    <div className="inline-flex self-start rounded-full bg-[#FF5C1A]/10 px-3 py-1 text-xs font-semibold text-[#FF5C1A] ring-1 ring-[#FF5C1A]/20">
+                      {tag}
+                    </div>
+                    <div className="mt-4 font-heading text-lg text-white">{p.title}</div>
+                    <p className="mt-2 flex-1 text-sm leading-6 text-white/65">{p.excerpt}</p>
+                    <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#00D4FF] opacity-0 transition group-hover:opacity-100">
+                      Read more <span aria-hidden="true">→</span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
       <CTABanner />
     </div>
   );
 }
-
