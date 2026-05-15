@@ -79,7 +79,7 @@ export async function POST(req: Request) {
     if (apiKey) {
       const resend = new Resend(apiKey);
       const to = process.env.CONTACT_NOTIFY_EMAIL || "orahtechandmarketing@gmail.com";
-      const from = process.env.RESEND_FROM || "Orah Website <onboarding@resend.dev>";
+      const from = process.env.RESEND_FROM || "Orah Tech and Marketing <hello@orahtechandmarketing.com>";
 
       const subject =
         intent === "audit"
