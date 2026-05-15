@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
-import { CreativePhotoStrip } from "@/components/CreativePhotoStrip";
 import { FadeIn } from "@/components/FadeIn";
-import { ProcessFlowDiagram } from "@/components/diagrams/ProcessFlowDiagram";
 import { WorkGrid } from "@/components/WorkGrid";
 
 export const metadata: Metadata = {
@@ -10,6 +9,13 @@ export const metadata: Metadata = {
   description:
     "Case studies and campaign snapshots—see how we drive growth across industries.",
 };
+
+const stats = [
+  { value: "200+", label: "Brands supported", color: "#00D4FF" },
+  { value: "8+", label: "Industries served", color: "#FF5C1A" },
+  { value: "1,000+", label: "Creatives delivered", color: "#7c6cff" },
+  { value: "4–8 wks", label: "Avg. project timeline", color: "#b8ff6c" },
+];
 
 export default function WorkPage() {
   return (
@@ -32,43 +38,42 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/5 bg-black/20 py-12 sm:py-16">
+      <section className="border-y border-white/5 bg-black/20 py-12 sm:py-14">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-            <FadeIn>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF]">
-                How projects run
-              </p>
-              <h2 className="mt-3 font-heading text-2xl tracking-tight text-white sm:text-3xl">
-                Same workflow whether it’s a sprint or a long-term retainer
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-white/65">
-                Cards below are placeholders—replace with real case studies, metrics, and hero
-                shots as you publish work.
-              </p>
-              <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-4 sm:p-6">
-                <ProcessFlowDiagram />
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.05}>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-                Visual texture
-              </p>
-              <p className="mt-3 text-sm leading-6 text-white/55">
-                Local SVG moodboards for visual rhythm—swap for real case art in{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-white/80">/public/moodboard</code>.
-              </p>
-              <div className="mt-6">
-                <CreativePhotoStrip />
-              </div>
-            </FadeIn>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {stats.map((s) => (
+              <FadeIn key={s.label}>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                  <div className="font-heading text-3xl font-bold" style={{ color: s.color }}>
+                    {s.value}
+                  </div>
+                  <div className="mt-1.5 text-sm text-white/55">{s.label}</div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pb-20 pt-14">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
           <FadeIn>
+            <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF]">
+                  Selected projects
+                </p>
+                <h2 className="mt-2 font-heading text-2xl tracking-tight text-white sm:text-3xl">
+                  Work across industries
+                </h2>
+              </div>
+              <Link
+                href="/contact"
+                className="inline-flex h-10 items-center justify-center rounded-full bg-[#FF5C1A] px-5 text-sm font-semibold text-black hover:brightness-110 transition"
+              >
+                Start a project →
+              </Link>
+            </div>
             <WorkGrid />
           </FadeIn>
         </div>
@@ -76,4 +81,3 @@ export default function WorkPage() {
     </div>
   );
 }
-
