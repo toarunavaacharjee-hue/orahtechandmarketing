@@ -1,67 +1,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a0f2c"/><stop offset="100%" stop-color="#050a18"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1020"/><stop offset="100%" stop-color="#06100a"/></linearGradient>
+    <linearGradient id="master" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a2818"/><stop offset="100%" stop-color="#0d1a0c"/></linearGradient>
+    <linearGradient id="btn" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF5C1A"/><stop offset="100%" stop-color="#ff7c3a"/></linearGradient>
   </defs>
   <rect width="600" height="340" fill="url(#bg)"/>
-  <!-- Template system visual - 3 content cards in a row with linking arrows -->
-  <!-- Master template (left, larger) -->
-  <rect x="20" y="40" width="160" height="260" rx="12" fill="rgba(255,92,26,0.08)" stroke="rgba(255,92,26,0.28)" stroke-width="1.5"/>
-  <rect x="30" y="52" width="140" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
-  <rect x="30" y="52" width="60" height="10" rx="3" fill="rgba(255,92,26,0.3)"/>
-  <rect x="30" y="68" width="140" height="80" rx="8" fill="rgba(255,92,26,0.1)" stroke="rgba(255,92,26,0.2)"/>
-  <circle cx="100" cy="108" r="26" fill="rgba(255,92,26,0.15)" stroke="rgba(255,92,26,0.3)"/>
-  <rect x="30" y="158" width="140" height="8" rx="3" fill="rgba(255,255,255,0.2)"/>
-  <rect x="30" y="172" width="110" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="30" y="183" width="120" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="30" y="194" width="90" height="6" rx="2" fill="rgba(255,255,255,0.07)"/>
-  <rect x="30" y="214" width="100" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="30" y="225" width="80" height="6" rx="2" fill="rgba(255,255,255,0.05)"/>
-  <rect x="30" y="252" width="70" height="22" rx="11" fill="#FF5C1A" opacity="0.9"/>
-  <rect x="110" y="252" width="50" height="22" rx="11" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)"/>
+  <!-- Master template -->
+  <rect x="16" y="16" width="172" height="308" rx="14" fill="url(#master)" stroke="rgba(255,92,26,0.35)" stroke-width="1.5"/>
+  <rect x="28" y="28" width="148" height="14" rx="4" fill="rgba(255,92,26,0.2)"/>
+  <rect x="28" y="28" width="70" height="14" rx="4" fill="rgba(255,92,26,0.4)"/>
+  <rect x="36" y="32" width="54" height="6" rx="2" fill="#FF5C1A" opacity="0.8"/>
+  <!-- Hero image in master -->
+  <rect x="28" y="50" width="148" height="90" rx="10" fill="rgba(255,92,26,0.08)" stroke="rgba(255,92,26,0.25)" stroke-width="1"/>
+  <circle cx="102" cy="95" r="30" fill="rgba(255,92,26,0.15)" stroke="rgba(255,92,26,0.35)" stroke-width="1.5"/>
+  <circle cx="102" cy="95" r="18" fill="rgba(255,92,26,0.22)" stroke="rgba(255,92,26,0.5)" stroke-width="1"/>
+  <circle cx="102" cy="95" r="8" fill="#FF5C1A"/>
+  <!-- Master content -->
+  <rect x="28" y="152" width="148" height="12" rx="4" fill="rgba(255,255,255,0.7)"/>
+  <rect x="28" y="170" width="120" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="28" y="182" width="100" height="7" rx="2" fill="rgba(255,255,255,0.2)"/>
+  <rect x="28" y="194" width="130" height="7" rx="2" fill="rgba(255,255,255,0.18)"/>
+  <!-- Sizes -->
+  <rect x="28" y="212" width="30" height="28" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <rect x="32" y="222" width="22" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="64" y="212" width="30" height="28" rx="6" fill="rgba(255,92,26,0.2)" stroke="rgba(255,92,26,0.5)" stroke-width="1"/>
+  <rect x="68" y="222" width="22" height="7" rx="2" fill="#FF5C1A" opacity="0.8"/>
+  <rect x="100" y="212" width="30" height="28" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <rect x="104" y="222" width="22" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="28" y="252" width="148" height="32" rx="16" fill="url(#btn)"/>
+  <rect x="60" y="263" width="84" height="9" rx="3" fill="white" opacity="0.95"/>
   <!-- MASTER label -->
-  <rect x="30" y="284" width="60" height="14" rx="7" fill="rgba(255,92,26,0.2)" stroke="rgba(255,92,26,0.4)"/>
-  <text x="38" y="295" font-family="monospace" font-size="7" fill="#FF5C1A" font-weight="bold">MASTER</text>
-  <!-- Arrow 1 -->
-  <line x1="184" y1="170" x2="218" y2="170" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <polygon points="216,165 224,170 216,175" fill="rgba(255,255,255,0.3)"/>
-  <!-- Variant 1 (square) -->
-  <rect x="226" y="70" width="120" height="120" rx="10" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.22)"/>
-  <rect x="236" y="80" width="100" height="60" rx="6" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.18)"/>
-  <circle cx="286" cy="110" r="20" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.28)"/>
-  <rect x="236" y="148" width="100" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
-  <rect x="236" y="160" width="80" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="236" y="174" width="50" height="14" rx="7" fill="rgba(0,212,255,0.2)"/>
-  <rect x="236" y="196" width="60" height="12" rx="6" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.25)"/>
-  <text x="244" y="206" font-family="monospace" font-size="7" fill="#00D4FF">1:1 SQUARE</text>
+  <rect x="28" y="296" width="70" height="18" rx="9" fill="rgba(255,92,26,0.2)" stroke="rgba(255,92,26,0.45)" stroke-width="1"/>
+  <rect x="34" y="302" width="58" height="6" rx="2" fill="#FF5C1A" opacity="0.75"/>
+  <!-- Arrow -->
+  <line x1="194" y1="170" x2="226" y2="170" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="222,164 232,170 222,176" fill="rgba(255,255,255,0.4)"/>
+  <!-- Variant 1 - Square -->
+  <rect x="234" y="60" width="140" height="140" rx="12" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.25)" stroke-width="1"/>
+  <rect x="234" y="60" width="140" height="82" rx="12" fill="rgba(0,212,255,0.06)"/>
+  <rect x="234" y="130" width="140" height="12" fill="rgba(0,212,255,0.06)"/>
+  <circle cx="304" cy="101" r="28" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.35)" stroke-width="1.5"/>
+  <circle cx="304" cy="101" r="16" fill="rgba(0,212,255,0.22)" stroke="rgba(0,212,255,0.5)"/>
+  <circle cx="304" cy="101" r="7" fill="#00D4FF"/>
+  <rect x="246" y="150" width="116" height="8" rx="3" fill="rgba(255,255,255,0.65)"/>
+  <rect x="246" y="163" width="80" height="6" rx="2" fill="rgba(0,212,255,0.6)"/>
+  <rect x="246" y="176" width="116" height="16" rx="8" fill="rgba(0,212,255,0.2)" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+  <rect x="266" y="181" width="76" height="6" rx="2" fill="#00D4FF" opacity="0.7"/>
+  <!-- 1:1 label -->
+  <rect x="238" y="190" width="80" height="16" rx="8" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+  <rect x="244" y="196" width="68" height="5" rx="2" fill="#00D4FF" opacity="0.6"/>
   <!-- Arrow 2 -->
-  <line x1="184" y1="215" x2="218" y2="230" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <polygon points="215,225 224,232 218,236" fill="rgba(255,255,255,0.25)"/>
-  <!-- Variant 2 (portrait) -->
-  <rect x="226" y="220" width="80" height="100" rx="10" fill="rgba(124,108,255,0.07)" stroke="rgba(124,108,255,0.22)"/>
-  <rect x="234" y="230" width="64" height="50" rx="6" fill="rgba(124,108,255,0.1)"/>
-  <rect x="234" y="288" width="64" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
-  <rect x="234" y="298" width="50" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="234" y="306" width="64" height="12" rx="6" fill="rgba(124,108,255,0.15)" stroke="rgba(124,108,255,0.28)"/>
-  <text x="239" y="316" font-family="monospace" font-size="7" fill="#7c6cff">4:5 STORY</text>
-  <!-- Arrow 3 -->
-  <line x1="350" y1="130" x2="390" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <polygon points="388,125 396,130 388,135" fill="rgba(255,255,255,0.3)"/>
-  <!-- Template variants panel -->
-  <rect x="398" y="40" width="182" height="260" rx="12" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.07)"/>
-  <text x="414" y="62" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.35)" letter-spacing="0.1em">TEMPLATE PACK</text>
-  <rect x="412" y="72" width="154" height="32" rx="6" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.15)"/>
-  <rect x="420" y="80" width="70" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
-  <rect x="420" y="90" width="100" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="412" y="112" width="154" height="32" rx="6" fill="rgba(255,92,26,0.07)" stroke="rgba(255,92,26,0.15)"/>
-  <rect x="420" y="120" width="70" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
-  <rect x="420" y="130" width="100" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="412" y="152" width="154" height="32" rx="6" fill="rgba(124,108,255,0.07)" stroke="rgba(124,108,255,0.15)"/>
-  <rect x="420" y="160" width="70" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
-  <rect x="420" y="170" width="100" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="412" y="192" width="154" height="32" rx="6" fill="rgba(184,255,108,0.06)" stroke="rgba(184,255,108,0.15)"/>
-  <rect x="420" y="200" width="70" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
-  <rect x="420" y="210" width="100" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <!-- Consistency badge -->
-  <rect x="412" y="260" width="154" height="28" rx="14" fill="rgba(184,255,108,0.12)" stroke="rgba(184,255,108,0.28)"/>
-  <text x="432" y="278" font-family="monospace" font-size="7.5" fill="#b8ff6c" letter-spacing="0.08em">ON-BRAND ALWAYS</text>
+  <line x1="194" y1="240" x2="226" y2="256" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="222,250 232,258 223,262" fill="rgba(255,255,255,0.35)"/>
+  <!-- Variant 2 - Portrait/Story -->
+  <rect x="234" y="218" width="90" height="114" rx="12" fill="rgba(124,108,255,0.08)" stroke="rgba(124,108,255,0.25)" stroke-width="1"/>
+  <rect x="234" y="218" width="90" height="60" rx="12" fill="rgba(124,108,255,0.06)"/>
+  <rect x="234" y="266" width="90" height="12" fill="rgba(124,108,255,0.06)"/>
+  <circle cx="279" cy="248" r="20" fill="rgba(124,108,255,0.2)" stroke="rgba(124,108,255,0.4)" stroke-width="1.5"/>
+  <circle cx="279" cy="248" r="10" fill="#7c6cff" opacity="0.7"/>
+  <rect x="244" y="284" width="70" height="7" rx="3" fill="rgba(255,255,255,0.6)"/>
+  <rect x="244" y="296" width="50" height="5" rx="2" fill="rgba(124,108,255,0.6)"/>
+  <rect x="244" y="308" width="70" height="16" rx="8" fill="rgba(124,108,255,0.2)" stroke="rgba(124,108,255,0.4)" stroke-width="1"/>
+  <!-- Template pack panel -->
+  <rect x="388" y="16" width="196" height="308" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <rect x="400" y="28" width="100" height="10" rx="3" fill="rgba(255,255,255,0.6)"/>
+  <rect x="400" y="42" width="172" height="52" rx="8" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <rect x="414" y="54" width="80" height="8" rx="3" fill="rgba(255,255,255,0.7)"/>
+  <rect x="414" y="66" width="130" height="5" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="414" y="75" width="100" height="5" rx="2" fill="rgba(255,255,255,0.2)"/>
+  <rect x="400" y="102" width="172" height="52" rx="8" fill="rgba(255,92,26,0.08)" stroke="rgba(255,92,26,0.2)" stroke-width="1"/>
+  <rect x="414" y="114" width="80" height="8" rx="3" fill="rgba(255,255,255,0.7)"/>
+  <rect x="414" y="126" width="130" height="5" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="414" y="135" width="100" height="5" rx="2" fill="rgba(255,255,255,0.2)"/>
+  <rect x="400" y="162" width="172" height="52" rx="8" fill="rgba(124,108,255,0.08)" stroke="rgba(124,108,255,0.2)" stroke-width="1"/>
+  <rect x="414" y="174" width="80" height="8" rx="3" fill="rgba(255,255,255,0.7)"/>
+  <rect x="414" y="186" width="130" height="5" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="414" y="195" width="100" height="5" rx="2" fill="rgba(255,255,255,0.2)"/>
+  <rect x="400" y="222" width="172" height="52" rx="8" fill="rgba(184,255,108,0.06)" stroke="rgba(184,255,108,0.2)" stroke-width="1"/>
+  <rect x="414" y="234" width="80" height="8" rx="3" fill="rgba(255,255,255,0.7)"/>
+  <rect x="414" y="246" width="130" height="5" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="414" y="255" width="100" height="5" rx="2" fill="rgba(255,255,255,0.2)"/>
+  <rect x="400" y="288" width="172" height="24" rx="12" fill="rgba(184,255,108,0.15)" stroke="rgba(184,255,108,0.35)" stroke-width="1"/>
+  <rect x="430" y="297" width="112" height="7" rx="3" fill="#b8ff6c" opacity="0.8"/>
 </svg>
