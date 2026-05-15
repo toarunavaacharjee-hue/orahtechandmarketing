@@ -135,32 +135,6 @@ export default function HomePage() {
       <Testimonials />
       <ProcessTimeline />
 
-      <section className="border-t border-white/5 py-20">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-          <FadeIn>
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF]">
-                  Blog
-                </p>
-                <h2 className="mt-2 font-heading text-3xl tracking-tight text-white sm:text-4xl">
-                  Insights and playbooks
-                </h2>
-                <p className="mt-4 max-w-xl text-base leading-7 text-white/70">
-                  Short, actionable notes on branding, content systems, and web experience—for
-                  founders, marketing teams, and design leads.
-                </p>
-              </div>
-              <Link
-                href="/blog"
-                className="inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-white/5 px-5 text-sm font-semibold text-white ring-1 ring-white/10 hover:bg-white/10 transition"
-              >
-                Read the blog →
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
       <CTABanner />
     </div>
