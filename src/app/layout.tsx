@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   },
   description:
     "A creative-first tech and marketing agency helping ambitious brands stand out with premium design, content systems, and conversion-focused websites.",
+  robots: { index: true, follow: true },
   openGraph: {
     title: `${BRAND.name} — ${BRAND.tagline}`,
     description:
@@ -22,13 +23,35 @@ export const metadata: Metadata = {
     url: `https://${BRAND.domain}`,
     siteName: BRAND.name,
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${BRAND.name} — ${BRAND.tagline}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${BRAND.name} — ${BRAND.tagline}`,
-    description:
-      "Where Technology Meets Growth — creative-first design + modern web experiences.",
+    description: "Where Technology Meets Growth — creative-first design + modern web experiences.",
+    images: ["/og-image.png"],
   },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: BRAND.name,
+  url: `https://${BRAND.domain}`,
+  logo: `https://${BRAND.domain}/favicon.ico`,
+  description:
+    "Creative-first tech and marketing agency. Premium design, content systems, and conversion-focused websites.",
+  email: BRAND.email,
+  sameAs: [BRAND.social.linkedin, BRAND.social.instagram, BRAND.social.twitter],
+  areaServed: ["US", "IN"],
+  serviceType: [
+    "Branding & Identity",
+    "Web Design & Development",
+    "Social Media Creatives",
+    "UI/UX Design",
+    "Creative Strategy",
+    "AI Creative Automation",
+  ],
 };
 
 export default function RootLayout({
@@ -39,11 +62,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="relative isolate min-h-full flex flex-col bg-[#050A18] text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <ScrollProgress />
         <SpotlightCursor />
         <div className="agency-grain" aria-hidden="true" />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-[#FF5C1A] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-black"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <main className="relative z-10 flex-1 pt-16">
+        <main id="main-content" className="relative z-10 flex-1 pt-16">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />

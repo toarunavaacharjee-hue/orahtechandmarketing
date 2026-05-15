@@ -3,7 +3,9 @@ export type BlogPost = {
   title: string;
   excerpt: string;
   tag: string;
+  category: "Branding" | "Web Design" | "AI & Automation" | "Creative Process" | "Strategy";
   publishedAt: string;
+  readTime: number;
   content: string;
 };
 
@@ -14,7 +16,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Most brands don't have a design problem—they have a system problem. Here's how to build creative consistency without slowing down.",
     tag: "Branding",
+    category: "Branding",
     publishedAt: "2026-05-10",
+    readTime: 5,
     content: `
 <p>You've got a logo. You've got brand colours. You've got a designer (or a Canva account). And yet—every time a new post goes out, it looks like it was made by a different company.</p>
 <p>This is the most common creative problem we see. And it almost never comes from a lack of talent. It comes from a lack of <strong>system</strong>.</p>
@@ -43,7 +47,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "A beautiful landing page that doesn't convert is just expensive decoration. Here are the five mistakes we fix most often—and what to do instead.",
     tag: "Web Design",
+    category: "Web Design",
     publishedAt: "2026-05-06",
+    readTime: 6,
     content: `
 <p>We review a lot of landing pages. And we keep seeing the same five mistakes—on pages that are often beautifully designed, well-written, and completely forgettable the moment someone closes the tab.</p>
 <h2>1. The Headline Describes You, Not the Outcome</h2>
@@ -65,7 +71,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "AI and automation aren't replacing designers—they're giving them leverage. Here's how to build a creative workflow that produces more without sacrificing quality.",
     tag: "AI & Automation",
+    category: "AI & Automation",
     publishedAt: "2026-04-29",
+    readTime: 7,
     content: `
 <p>The problem isn't that your team lacks creativity. It's that too much of their time goes to repetitive work—resizing assets, recreating templates, exporting variants, renaming files. Creative automation fixes that.</p>
 <h2>What Creative Automation Actually Means</h2>
@@ -89,7 +97,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Bad briefs are the hidden tax on every creative team. Here's the exact brief structure we use—and why it cuts revision cycles in half.",
     tag: "Creative Process",
+    category: "Creative Process",
     publishedAt: "2026-04-21",
+    readTime: 5,
     content: `
 <p>The most expensive thing in a creative workflow isn't design time. It's revision time—and almost all of it traces back to a bad brief.</p>
 <p>When a brief is vague, designers make assumptions. When designers make assumptions, the first round misses the mark. When the first round misses the mark, you get a second round, a third, an email chain, and a creative that's three weeks late and nobody's happy with.</p>
@@ -119,6 +129,12 @@ export function getPostsSorted(): BlogPost[] {
   return [...BLOG_POSTS].sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
+}
+
+export function getRelatedPosts(current: BlogPost, limit = 2): BlogPost[] {
+  return BLOG_POSTS.filter(
+    (p) => p.slug !== current.slug && (p.category === current.category || p.tag === current.tag)
+  ).slice(0, limit);
 }
 
 export function formatPostDate(iso: string): string {
