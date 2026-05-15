@@ -119,6 +119,90 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>Teams that implement this structure consistently cut their revision cycles by 40–60%. If you want a copy of the brief template we use with our clients, <a href="/contact">reach out</a> and we'll send it over.</p>
 `,
   },
+  {
+    slug: "how-to-position-your-brand-without-losing-your-audience",
+    title: "How to Reposition Your Brand Without Losing Your Audience",
+    excerpt:
+      "Brand repositioning done badly costs you everything you've built. Done right, it accelerates growth. Here's the framework we use with clients.",
+    tag: "Strategy",
+    category: "Strategy",
+    publishedAt: "2026-04-14",
+    readTime: 6,
+    content: `
+<p>Most repositioning projects fail for the same reason: the team changes the logo and the tagline, calls it "rebranding," and wonders why nothing changed. Positioning isn't how you look—it's where you sit in the mind of your customer relative to every alternative.</p>
+<h2>What Repositioning Actually Changes</h2>
+<p>True repositioning means changing one or more of three things:</p>
+<ul>
+<li><strong>Who you're for:</strong> Moving from "everyone" to a specific buyer profile. A healthcare SaaS that used to sell to anyone with a budget, now sells exclusively to multi-site clinical groups. Every word on the website changes.</li>
+<li><strong>What you're against:</strong> The alternative your buyer compares you to. If you're positioned against spreadsheets, you sound different than if you're positioned against enterprise software.</li>
+<li><strong>What makes you different:</strong> The one thing you do better than every alternative for your specific buyer—not the one thing you're proud of.</li>
+</ul>
+<h2>The Risk of Doing It Too Fast</h2>
+<p>Repositioning sends signals. Existing customers notice. If the change is jarring, you lose them before the new audience arrives. The safest approach: run the new positioning in parallel before you commit. A/B test messaging on paid traffic. See which version converts better before you rewrite your homepage.</p>
+<h2>The Framework We Use</h2>
+<ol>
+<li><strong>Interview your best 5 customers:</strong> Ask why they chose you, what they were using before, and what they'd miss if you disappeared. Their language is your new positioning.</li>
+<li><strong>Map the competitive landscape:</strong> Place every competitor on a 2×2. Find the quadrant nobody owns that your best customers actually want.</li>
+<li><strong>Write the positioning statement:</strong> For [specific buyer], [your brand] is the [category] that [differentiated benefit], unlike [alternative], because [reason to believe].</li>
+<li><strong>Test before you commit:</strong> Landing page test, one campaign, 30 days. If it converts better, roll it out.</li>
+</ol>
+<p>If you're working through a repositioning and want a second set of eyes, <a href="/contact">get in touch</a>—we run brand strategy workshops that usually surface the answer in a day.</p>
+`,
+  },
+  {
+    slug: "the-ux-metrics-that-actually-matter",
+    title: "The UX Metrics That Actually Matter for Growing Brands",
+    excerpt:
+      "Most UX teams track too many metrics and act on none of them. Here's how to identify the two or three numbers that tell you whether your product experience is working.",
+    tag: "Strategy",
+    category: "Strategy",
+    publishedAt: "2026-04-07",
+    readTime: 5,
+    content: `
+<p>There's no shortage of UX metrics you <em>could</em> track. Session duration, pages per visit, scroll depth, heatmap coverage, rage click rate, NPS, CSAT, CES—the list goes on. The problem isn't a lack of data. It's knowing which numbers to act on.</p>
+<h2>The Three Categories That Matter</h2>
+<p>Every meaningful UX metric falls into one of three buckets:</p>
+<ul>
+<li><strong>Completion rate:</strong> What percentage of users who start a key flow finish it? For an e-commerce brand, that's add-to-cart → checkout → purchase. For a SaaS, it's signup → first key action → return visit. This is the most important metric and the one most teams don't track precisely enough.</li>
+<li><strong>Time to value:</strong> How long does it take a new user to get to the moment where your product actually helps them? Every minute before that moment is friction. Every minute after it is engagement. Reduce the first; extend the second.</li>
+<li><strong>Return intent:</strong> Did the user come back? Repeat visitors are the leading indicator of retention, and retention is the leading indicator of LTV. If your DAU/MAU ratio is below 20%, your product isn't becoming a habit.</li>
+</ul>
+<h2>What to Do With the Data</h2>
+<p>Pick one flow. Map every step. Find the biggest drop-off point. Fix just that one thing. Measure again. This loop—pick, map, fix, measure—is more valuable than any dashboard overhaul.</p>
+<h2>The Mistake Growing Brands Make</h2>
+<p>They optimize for acquisition metrics (traffic, CTR, CPA) while ignoring experience metrics. A landing page that converts at 6% but drops 80% of users in the first session has a UX problem, not a traffic problem. Fix the experience first.</p>
+<p>If you want us to run a UX audit on your key flows and identify the biggest drop-off points, <a href="/free-audit">book a free audit here</a>.</p>
+`,
+  },
+  {
+    slug: "what-a-good-pitch-deck-actually-looks-like",
+    title: "What a Good Pitch Deck Actually Looks Like in 2025",
+    excerpt:
+      "Most pitch decks fail at slide 3. Here's how to structure a deck that holds attention, builds a clear story, and makes the ask feel obvious.",
+    tag: "Creative Process",
+    category: "Creative Process",
+    publishedAt: "2026-03-31",
+    readTime: 5,
+    content: `
+<p>Pitch decks are one of the most high-stakes creative deliverables a brand produces. They go in front of investors, partners, enterprise buyers, or boards—people who are time-pressured, skeptical, and pattern-matching against dozens of similar decks. Here's what makes one work.</p>
+<h2>The Structure That Works</h2>
+<p>The best decks follow a narrative arc, not an information checklist. The sequence that consistently works:</p>
+<ol>
+<li><strong>The problem (1 slide):</strong> Make it specific, make it painful. One sentence. Not a list of statistics.</li>
+<li><strong>The insight (1 slide):</strong> Why now? What's changed in the market, technology, or behaviour that makes this the right time?</li>
+<li><strong>The solution (1–2 slides):</strong> What you do, and for whom. Keep it concrete. Show the thing, don't just describe it.</li>
+<li><strong>The proof (2–3 slides):</strong> Revenue, customers, retention, partnerships—whatever you have. Early traction beats projections every time.</li>
+<li><strong>The market (1 slide):</strong> Bottom-up sizing only. "SAM of $X, targeting Y% in 3 years" is more credible than quoting a Gartner report.</li>
+<li><strong>The team (1 slide):</strong> Why you? What unfair advantage do you have?</li>
+<li><strong>The ask (1 slide):</strong> How much, what it funds, and the milestone it gets you to.</li>
+</ol>
+<h2>The Design Principles That Separate Good Decks</h2>
+<p>One idea per slide—always. If a slide needs a header and four bullet points, it's two slides. Use visuals to show, not decorate. Charts should communicate instantly. Annotations explain the point, not what's already visible in the chart.</p>
+<h2>What Most Decks Get Wrong</h2>
+<p>They start with the company story instead of the problem. Nobody cares about your founding story until they care about the problem you're solving. Lead with the market reality, not your journey.</p>
+<p>If you're preparing a pitch deck for investors or enterprise sales, <a href="/contact">get in touch</a>—we design decks that tell a clear story and look the part.</p>
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
