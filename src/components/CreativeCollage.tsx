@@ -11,7 +11,7 @@ const layers = [
     y: "6%",
     delay: 0,
     fg: "#FF5C1A",
-    bodyBg: "linear-gradient(145deg, rgba(255,92,26,0.55) 0%, rgba(255,92,26,0.12) 45%, rgba(5,10,24,0.96) 100%)",
+    img: "/collage/video-launch-film.svg",
     border: "rgba(255,92,26,0.3)",
     bottomBg: "rgba(5,10,24,0.82)",
     bottomBorder: "rgba(255,92,26,0.22)",
@@ -24,7 +24,7 @@ const layers = [
     y: "0%",
     delay: 0.12,
     fg: "#00D4FF",
-    bodyBg: "linear-gradient(145deg, rgba(0,212,255,0.45) 0%, rgba(0,212,255,0.1) 45%, rgba(5,10,24,0.96) 100%)",
+    img: "/collage/social-kit.svg",
     border: "rgba(0,212,255,0.25)",
     bottomBg: "rgba(5,10,24,0.82)",
     bottomBorder: "rgba(0,212,255,0.18)",
@@ -37,7 +37,7 @@ const layers = [
     y: "48%",
     delay: 0.24,
     fg: "#7c6cff",
-    bodyBg: "linear-gradient(145deg, rgba(124,108,255,0.5) 0%, rgba(124,108,255,0.12) 45%, rgba(5,10,24,0.96) 100%)",
+    img: "/collage/pitch-deck.svg",
     border: "rgba(124,108,255,0.28)",
     bottomBg: "rgba(5,10,24,0.82)",
     bottomBorder: "rgba(124,108,255,0.2)",
@@ -50,7 +50,7 @@ const layers = [
     y: "44%",
     delay: 0.36,
     fg: "#b8ff6c",
-    bodyBg: "linear-gradient(145deg, rgba(0,212,255,0.32) 0%, rgba(184,255,108,0.18) 45%, rgba(5,10,24,0.96) 100%)",
+    img: "/collage/web-ui.svg",
     border: "rgba(184,255,108,0.22)",
     bottomBg: "rgba(5,10,24,0.82)",
     bottomBorder: "rgba(184,255,108,0.16)",
@@ -88,36 +88,25 @@ export function CreativeCollage() {
             }
           >
             {/* Card body */}
-            <div
-              className="relative aspect-[4/5]"
-              style={{ background: layer.bodyBg }}
-            >
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={layer.img}
+                alt={layer.label}
+                className="h-full w-full object-cover object-top"
+                loading="lazy"
+                decoding="async"
+              />
               {/* Category badge */}
               <div
-                className="absolute left-3 top-3 rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em] ring-1"
+                className="absolute left-3 top-3 rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em]"
                 style={{
                   color: layer.fg,
-                  backgroundColor: `${layer.fg}18`,
-                  boxShadow: `0 0 0 1px ${layer.fg}30`,
+                  backgroundColor: `${layer.fg}22`,
+                  boxShadow: `0 0 0 1px ${layer.fg}40`,
                 }}
               >
                 {layer.tag}
               </div>
-              {/* Subtle grid pattern */}
-              <div
-                className="absolute inset-0 opacity-[0.07]"
-                style={{
-                  backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px)",
-                  backgroundSize: "18px 18px",
-                }}
-              />
-              {/* Corner glow */}
-              <div
-                className="absolute right-0 top-0 h-20 w-20 rounded-bl-3xl opacity-30"
-                style={{
-                  background: `radial-gradient(circle at top right, ${layer.fg}, transparent 70%)`,
-                }}
-              />
             </div>
 
             {/* Label bar */}
