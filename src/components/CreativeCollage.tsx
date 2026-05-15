@@ -93,7 +93,7 @@ export function CreativeCollage() {
                 src={layer.img}
                 alt={layer.label}
                 className="h-full w-full object-cover object-top"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
               />
               {/* Category badge */}
