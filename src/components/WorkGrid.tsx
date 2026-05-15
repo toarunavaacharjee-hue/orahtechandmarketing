@@ -15,13 +15,14 @@ const cases = [
     description: "Built a complete PMM + GTM operating platform from zero — 18 AI-powered modules, auth, billing, and a two-site Vercel deployment.",
     href: "/work/ai-marketing-workbench",
     featured: true,
+    thumbnail: "/work/ai-marketing-workbench.svg",
   },
-  { industry: "E-commerce" as const, metric: "New product creative system", title: "Catalog Creative Refresh", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false },
-  { industry: "SaaS" as const, metric: "Website redesign + UI kit", title: "Narrative-led Website Overhaul", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false },
-  { industry: "D2C" as const, metric: "Brand system + templates", title: "Content Consistency Engine", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false },
-  { industry: "Real Estate" as const, metric: "Brochure + landing page", title: "Premium Project Presentation", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false },
-  { industry: "E-commerce" as const, metric: "PDP + landing page UX", title: "Conversion-focused Store UX", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false },
-  { industry: "NGO" as const, metric: "Donation page redesign", title: "Trust-first Impact Storytelling", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false },
+  { industry: "E-commerce" as const, metric: "New product creative system", title: "Catalog Creative Refresh", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false, thumbnail: "/work/catalog-creative.svg" },
+  { industry: "SaaS" as const, metric: "Website redesign + UI kit", title: "Narrative-led Website Overhaul", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false, thumbnail: "/work/narrative-website.svg" },
+  { industry: "D2C" as const, metric: "Brand system + templates", title: "Content Consistency Engine", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false, thumbnail: "/work/content-engine.svg" },
+  { industry: "Real Estate" as const, metric: "Brochure + landing page", title: "Premium Project Presentation", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false, thumbnail: "/work/premium-presentation.svg" },
+  { industry: "E-commerce" as const, metric: "PDP + landing page UX", title: "Conversion-focused Store UX", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false, thumbnail: "/work/store-ux.svg" },
+  { industry: "NGO" as const, metric: "Donation page redesign", title: "Trust-first Impact Storytelling", description: "Strategy, design, templates, and web experience—delivered with a clear system so output stays consistent.", href: "/contact", featured: false, thumbnail: "/work/impact-storytelling.svg" },
 ] as const;
 
 export function WorkGrid() {
@@ -68,12 +69,25 @@ export function WorkGrid() {
             <Link
               href={c.href}
               className={[
-                "group flex h-full flex-col rounded-2xl border p-6 transition",
+                "group flex h-full flex-col rounded-2xl border overflow-hidden transition",
                 c.featured
                   ? "border-[#7c6cff]/30 bg-[#7c6cff]/5 hover:border-[#7c6cff]/50 hover:bg-[#7c6cff]/10"
                   : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05]",
               ].join(" ")}
             >
+              {/* Thumbnail */}
+              <div className={["relative w-full overflow-hidden", c.featured ? "h-48" : "h-36"].join(" ")}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={c.thumbnail}
+                  alt={c.title}
+                  className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050A18]/60 via-transparent to-transparent" />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
               <div className="flex items-center justify-between gap-4">
                 <div className="text-xs font-semibold text-white/60">{c.industry}</div>
                 <div className={[
@@ -94,6 +108,7 @@ export function WorkGrid() {
                   : "text-[#FF5C1A] opacity-0 group-hover:opacity-100",
               ].join(" ")}>
                 {c.featured ? "View case study →" : "View Case Study →"}
+              </div>
               </div>
             </Link>
           </motion.div>

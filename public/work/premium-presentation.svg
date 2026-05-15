@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0c1428"/><stop offset="100%" stop-color="#050a18"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD600" stop-opacity="0.4"/><stop offset="100%" stop-color="#FF5C1A" stop-opacity="0.2"/></linearGradient>
+  </defs>
+  <rect width="600" height="340" fill="url(#bg)"/>
+  <!-- Ambient glow -->
+  <circle cx="300" cy="170" r="180" fill="url(#gold)" opacity="0.3"/>
+  <!-- Brochure / deck mockup - centered landscape -->
+  <rect x="60" y="50" width="480" height="240" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,214,0,0.2)" stroke-width="1.5"/>
+  <!-- Left page -->
+  <rect x="60" y="50" width="240" height="240" rx="14" fill="rgba(255,214,0,0.04)"/>
+  <rect x="60" y="50" width="240" height="240" rx="0" fill="rgba(255,214,0,0.04)"/>
+  <!-- Background image area left -->
+  <rect x="76" y="66" width="208" height="130" rx="8" fill="rgba(255,214,0,0.06)" stroke="rgba(255,214,0,0.15)"/>
+  <!-- Building silhouette -->
+  <rect x="130" y="100" width="40" height="96" rx="4" fill="rgba(255,214,0,0.12)"/>
+  <rect x="176" y="115" width="28" height="81" rx="4" fill="rgba(255,214,0,0.09)"/>
+  <rect x="96" y="126" width="28" height="70" rx="4" fill="rgba(255,214,0,0.09)"/>
+  <rect x="210" y="130" width="20" height="66" rx="3" fill="rgba(255,214,0,0.07)"/>
+  <!-- Left page text -->
+  <rect x="76" y="208" width="100" height="12" rx="3" fill="rgba(255,255,255,0.3)"/>
+  <rect x="76" y="226" width="150" height="7" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="76" y="238" width="130" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <rect x="76" y="270" width="50" height="6" rx="2" fill="rgba(255,214,0,0.4)"/>
+  <!-- Divider -->
+  <line x1="300" y1="60" x2="300" y2="280" stroke="rgba(255,214,0,0.15)" stroke-width="1"/>
+  <!-- Right page -->
+  <rect x="316" y="66" width="208" height="80" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <rect x="328" y="78" width="80" height="12" rx="3" fill="rgba(255,255,255,0.22)"/>
+  <rect x="328" y="96" width="170" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="328" y="107" width="150" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <rect x="328" y="118" width="160" height="6" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <!-- Stats row right -->
+  <rect x="316" y="158" width="60" height="54" rx="8" fill="rgba(255,214,0,0.08)" stroke="rgba(255,214,0,0.2)"/>
+  <text x="330" y="182" font-family="serif" font-size="16" fill="rgba(255,214,0,0.8)" font-weight="bold">3X</text>
+  <rect x="328" y="190" width="36" height="5" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="384" y="158" width="60" height="54" rx="8" fill="rgba(255,92,26,0.08)" stroke="rgba(255,92,26,0.2)"/>
+  <text x="392" y="182" font-family="serif" font-size="14" fill="rgba(255,92,26,0.8)" font-weight="bold">98%</text>
+  <rect x="392" y="190" width="36" height="5" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="452" y="158" width="68" height="54" rx="8" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.2)"/>
+  <text x="460" y="182" font-family="serif" font-size="14" fill="rgba(0,212,255,0.8)" font-weight="bold">+40%</text>
+  <rect x="460" y="190" width="40" height="5" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <!-- Floor plan -->
+  <rect x="316" y="222" width="208" height="54" rx="8" fill="rgba(255,255,255,0.025)"/>
+  <g stroke="rgba(255,214,0,0.2)" stroke-width="1">
+    <rect x="328" y="232" width="46" height="34" rx="0" stroke="rgba(255,214,0,0.25)" fill="rgba(255,214,0,0.04)"/>
+    <rect x="378" y="232" width="34" height="16" rx="0" fill="rgba(255,255,255,0.03)"/>
+    <rect x="378" y="250" width="34" height="16" rx="0" fill="rgba(255,255,255,0.03)"/>
+    <rect x="416" y="232" width="50" height="34" rx="0" fill="rgba(0,212,255,0.04)"/>
+    <rect x="470" y="240" width="40" height="18" rx="0" fill="rgba(255,255,255,0.03)"/>
+  </g>
+  <!-- Gold badge -->
+  <rect x="36" y="290" width="130" height="22" rx="11" fill="rgba(255,214,0,0.15)" stroke="rgba(255,214,0,0.35)"/>
+  <text x="52" y="305" font-family="monospace" font-size="8" fill="#FFD600" letter-spacing="0.1em">REAL ESTATE DECK</text>
+</svg>

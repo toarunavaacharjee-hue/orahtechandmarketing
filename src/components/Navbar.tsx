@@ -39,7 +39,11 @@ export function Navbar() {
           className="group inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]/70 rounded"
         >
           <span className="relative grid h-9 w-9 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10">
-            <span className="h-4 w-4 rounded bg-[#FF5C1A]" />
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="11" cy="11" r="8.5" stroke="#FF5C1A" strokeWidth="2.5"/>
+              <circle cx="11" cy="11" r="4" stroke="#00D4FF" strokeWidth="1.5" strokeDasharray="2 2"/>
+              <circle cx="11" cy="11" r="1.5" fill="#FF5C1A"/>
+            </svg>
             <span className="pointer-events-none absolute -inset-1 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-70 bg-[#00D4FF]/20" />
           </span>
           <span className="flex min-w-0 flex-col leading-tight">
