@@ -2,7 +2,7 @@ export const BRAND = {
   name: "Orah Tech and Marketing",
   domain: "orahtechandmarketing.com",
   tagline: "Where Technology Meets Growth",
-  email: "hello@orahtechandmarketing.com",
+  email: "orahtechandmarketing@gmail.com",
   location: "USA + India (remote)",
   social: {
     linkedin: "https://linkedin.com/company/orahtechandmarketing",
@@ -190,7 +190,7 @@ export const HOME = {
   footer: {
     quickLinks: ["Services", "About", "Work", "Contact"],
     contact: {
-      email: "hello@orahtechandmarketing.com",
+      email: "orahtechandmarketing@gmail.com",
       city: "USA + India (remote)",
     },
   },
