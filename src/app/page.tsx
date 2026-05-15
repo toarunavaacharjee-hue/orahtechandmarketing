@@ -10,8 +10,12 @@ import { CTABanner } from "@/components/CTABanner";
 import { FadeIn } from "@/components/FadeIn";
 import { CreativeStackDiagram } from "@/components/diagrams/CreativeStackDiagram";
 import { INDUSTRIES } from "@/lib/constants";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 
 export default function HomePage() {
+  const latestPosts = [...BLOG_POSTS]
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, 3);
   return (
     <div className="flex flex-col">
       <HeroSection />
@@ -135,6 +139,33 @@ export default function HomePage() {
       <Testimonials />
       <ProcessTimeline />
 
+      <section className="border-t border-white/5 py-20">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF]">From the blog</p>
+              <h2 className="mt-2 font-heading text-3xl tracking-tight text-white sm:text-4xl">Latest Insights</h2>
+            </div>
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#00D4FF] hover:text-white transition">
+              All posts <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {latestPosts.map((p) => (
+              <FadeIn key={p.slug}>
+                <Link href={`/blog/${p.slug}`} className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-white/20 hover:bg-white/[0.05]">
+                  <div className="inline-flex self-start rounded-full bg-[#FF5C1A]/10 px-3 py-1 text-xs font-semibold text-[#FF5C1A] ring-1 ring-[#FF5C1A]/20">{p.tag}</div>
+                  <div className="mt-4 font-heading text-lg text-white">{p.title}</div>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-white/65">{p.excerpt}</p>
+                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#00D4FF] opacity-0 transition group-hover:opacity-100">
+                    Read more <span aria-hidden="true">→</span>
+                  </div>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <CTABanner />
     </div>

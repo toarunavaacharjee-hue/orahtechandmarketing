@@ -1,10 +1,18 @@
 import type { MetadataRoute } from "next";
 
 import { BRAND, INDUSTRIES } from "@/lib/constants";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = `https://${BRAND.domain}`;
   const now = new Date();
+
+  const blogPages = BLOG_POSTS.map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
+  }));
 
   const industryPages = Object.keys(INDUSTRIES).map((slug) => ({
     url: `${base}/industries/${slug}`,
@@ -19,10 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/industries`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/work`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${base}/free-audit`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    ...blogPages,
     ...industryPages,
   ];
 }
