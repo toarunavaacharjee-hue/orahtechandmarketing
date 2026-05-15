@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           </section>
           <section>
             <div className="font-semibold text-white">Contact</div>
-            <p className="mt-2">Email: hello@orahtechandmarketing.com</p>
+            <p className="mt-2">Email: orahtechandmarketing@gmail.com</p>
           </section>
         </div>
       </div>

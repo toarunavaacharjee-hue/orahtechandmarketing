@@ -78,7 +78,7 @@ export async function POST(req: Request) {
     const apiKey = process.env.RESEND_API_KEY;
     if (apiKey) {
       const resend = new Resend(apiKey);
-      const to = process.env.CONTACT_NOTIFY_EMAIL || "hello@orahtechandmarketing.com";
+      const to = process.env.CONTACT_NOTIFY_EMAIL || "orahtechandmarketing@gmail.com";
       const from = process.env.RESEND_FROM || "Orah Website <onboarding@resend.dev>";
 
       const subject =
