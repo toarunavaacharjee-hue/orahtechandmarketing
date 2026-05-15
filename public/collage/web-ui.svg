@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#080e10"/><stop offset="100%" stop-color="#040a0c"/></linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1a14"/><stop offset="100%" stop-color="#061008"/></linearGradient>
+    <linearGradient id="btn" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#b8ff6c"/><stop offset="100%" stop-color="#80e040"/></linearGradient>
+    <linearGradient id="glowfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b8ff6c" stop-opacity="0.2"/><stop offset="100%" stop-color="#b8ff6c" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="240" height="300" fill="url(#bg)"/>
+
+  <!-- Browser chrome -->
+  <rect x="0" y="0" width="240" height="26" fill="rgba(10,18,14,0.98)"/>
+  <!-- Traffic lights -->
+  <circle cx="12" cy="13" r="4" fill="#ff5f57"/>
+  <circle cx="24" cy="13" r="4" fill="#ffbd2e"/>
+  <circle cx="36" cy="13" r="4" fill="#28ca41"/>
+  <!-- URL bar -->
+  <rect x="50" y="7" width="140" height="12" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="58" y="11" width="4" height="4" rx="1" fill="rgba(184,255,108,0.5)"/>
+  <rect x="66" y="11" width="80" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+
+  <!-- Navbar -->
+  <rect x="0" y="26" width="240" height="30" fill="rgba(6,12,8,0.97)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <circle cx="16" cy="41" r="6" fill="rgba(184,255,108,0.2)" stroke="rgba(184,255,108,0.5)" stroke-width="1"/>
+  <circle cx="16" cy="41" r="2.5" fill="#b8ff6c"/>
+  <rect x="28" y="36" width="48" height="10" rx="3" fill="white" opacity="0.85"/>
+  <rect x="120" y="38" width="22" height="6" rx="2" fill="rgba(255,255,255,0.35)"/>
+  <rect x="150" y="38" width="22" height="6" rx="2" fill="rgba(255,255,255,0.35)"/>
+  <rect x="188" y="34" width="44" height="14" rx="7" fill="url(#btn)" opacity="0.9"/>
+  <rect x="194" y="38" width="32" height="5" rx="2" fill="rgba(0,0,0,0.6)"/>
+
+  <!-- Hero section -->
+  <rect x="0" y="56" width="240" height="110" fill="url(#hero)"/>
+  <ellipse cx="160" cy="100" rx="70" ry="45" fill="url(#glowfade)"/>
+  <!-- Hero text blocks -->
+  <rect x="14" y="70" width="130" height="14" rx="4" fill="white" opacity="0.9"/>
+  <rect x="14" y="90" width="150" height="14" rx="4" fill="white" opacity="0.8"/>
+  <rect x="14" y="110" width="110" height="7" rx="2" fill="rgba(255,255,255,0.35)"/>
+  <rect x="14" y="122" width="95" height="7" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <!-- Hero CTA -->
+  <rect x="14" y="140" width="68" height="18" rx="9" fill="url(#btn)"/>
+  <rect x="20" y="145" width="56" height="7" rx="2" fill="rgba(0,0,0,0.55)"/>
+  <rect x="88" y="140" width="56" height="18" rx="9" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <!-- Hero image right -->
+  <rect x="156" y="64" width="74" height="94" rx="8" fill="rgba(184,255,108,0.06)" stroke="rgba(184,255,108,0.2)" stroke-width="1"/>
+  <!-- Chart inside hero image -->
+  <rect x="164" y="74" width="14" height="50" rx="2" fill="rgba(184,255,108,0.25)"/>
+  <rect x="182" y="86" width="14" height="38" rx="2" fill="rgba(184,255,108,0.4)"/>
+  <rect x="200" y="68" width="14" height="56" rx="2" fill="rgba(184,255,108,0.55)"/>
+  <polyline points="171,99 189,111 207,93" stroke="#b8ff6c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Features strip -->
+  <rect x="0" y="166" width="240" height="72" fill="rgba(255,255,255,0.015)"/>
+  <rect x="8" y="178" width="68" height="48" rx="8" fill="rgba(184,255,108,0.06)" stroke="rgba(184,255,108,0.15)" stroke-width="1"/>
+  <rect x="16" y="186" width="20" height="20" rx="5" fill="rgba(184,255,108,0.2)"/>
+  <rect x="18" y="191" width="16" height="10" rx="2" fill="#b8ff6c" opacity="0.6"/>
+  <rect x="16" y="210" width="52" height="6" rx="2" fill="rgba(255,255,255,0.55)"/>
+  <rect x="84" y="178" width="68" height="48" rx="8" fill="rgba(0,212,255,0.06)" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+  <rect x="92" y="186" width="20" height="20" rx="5" fill="rgba(0,212,255,0.2)"/>
+  <rect x="94" y="191" width="16" height="10" rx="2" fill="#00D4FF" opacity="0.6"/>
+  <rect x="92" y="210" width="52" height="6" rx="2" fill="rgba(255,255,255,0.55)"/>
+  <rect x="160" y="178" width="72" height="48" rx="8" fill="rgba(124,108,255,0.06)" stroke="rgba(124,108,255,0.15)" stroke-width="1"/>
+  <rect x="168" y="186" width="20" height="20" rx="5" fill="rgba(124,108,255,0.2)"/>
+  <rect x="170" y="191" width="16" height="10" rx="2" fill="#7c6cff" opacity="0.6"/>
+  <rect x="168" y="210" width="52" height="6" rx="2" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- Testimonial strip -->
+  <rect x="0" y="238" width="240" height="62" fill="rgba(255,255,255,0.02)"/>
+  <rect x="8" y="248" width="224" height="42" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <!-- Quote mark -->
+  <rect x="18" y="256" width="8" height="8" rx="2" fill="rgba(184,255,108,0.4)"/>
+  <rect x="28" y="256" width="170" height="7" rx="2" fill="rgba(255,255,255,0.45)"/>
+  <rect x="28" y="268" width="140" height="6" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <!-- Stars -->
+  <rect x="28" y="278" width="8" height="6" rx="1" fill="#b8ff6c" opacity="0.7"/>
+  <rect x="38" y="278" width="8" height="6" rx="1" fill="#b8ff6c" opacity="0.7"/>
+  <rect x="48" y="278" width="8" height="6" rx="1" fill="#b8ff6c" opacity="0.7"/>
+  <rect x="58" y="278" width="8" height="6" rx="1" fill="#b8ff6c" opacity="0.7"/>
+  <rect x="68" y="278" width="8" height="6" rx="1" fill="#b8ff6c" opacity="0.35"/>
+  <rect x="82" y="278" width="50" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+</svg>
