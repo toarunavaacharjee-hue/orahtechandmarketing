@@ -92,14 +92,7 @@ export default async function BlogPage() {
             </div>
           ) : (
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-white/70">
-              No posts yet. Create your first post in{" "}
-              <Link
-                href="/orah-control"
-                className="text-[#00D4FF] hover:text-white transition font-semibold"
-              >
-                /orah-control
-              </Link>
-              .
+              New articles are on the way. Check back soon for notes on brand, web, and creative systems.
             </div>
           )}
         </div>

@@ -27,7 +27,7 @@ export function Footer() {
             <div>
               <div className="text-sm font-semibold text-white">Quick links</div>
               <ul className="mt-4 grid gap-2 text-sm">
-                {NAV_LINKS.filter((l) => l.href !== "/blog").map((l) => (
+                {NAV_LINKS.map((l) => (
                   <li key={l.href}>
                     <Link href={l.href} className="text-white/65 hover:text-white transition">
                       {l.label}
