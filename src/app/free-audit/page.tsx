@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/FadeIn";
+import { FAQ } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
 import { ContactJourneyDiagram } from "@/components/diagrams/ContactJourneyDiagram";
 
@@ -90,6 +91,34 @@ export default function FreeAuditPage() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/5 py-16 pb-20">
+        <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
+          <FadeIn>
+            <FAQ
+              heading="About the free audit"
+              items={[
+                {
+                  q: "What exactly do you review?",
+                  a: "We look at your brand consistency (fonts, colours, logo usage), your website UX (navigation, trust signals, mobile experience), and your content production setup. You'll get specific, prioritised recommendations.",
+                },
+                {
+                  q: "How long does the audit take?",
+                  a: "We deliver your audit within 1–2 business days of receiving your submission. You'll get a written breakdown with clear action items.",
+                },
+                {
+                  q: "Is there any obligation after the audit?",
+                  a: "None. The audit is completely free with no strings attached. Many clients choose to work with us after seeing the results, but there's zero pressure.",
+                },
+                {
+                  q: "What if I don't have a website yet?",
+                  a: "That's fine—share whatever you do have: a social profile, a pitch deck, a brand document, or just describe what you're building. We'll work with what you've got.",
+                },
+              ]}
+            />
+          </FadeIn>
         </div>
       </section>
     </div>

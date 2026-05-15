@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import { FadeIn } from "@/components/FadeIn";
+import { FAQ } from "@/components/FAQ";
 import { CreativeStackDiagram } from "@/components/diagrams/CreativeStackDiagram";
 import { ProcessFlowDiagram } from "@/components/diagrams/ProcessFlowDiagram";
 import { HOME } from "@/lib/constants";
@@ -11,6 +12,42 @@ export const metadata: Metadata = {
   description:
     "Creative strategy, branding, UI/UX, social media creatives, and web design & development—everything you need to look premium online.",
 };
+
+const servicesPricing: Record<string, string> = {
+  "Creative Strategy & Design": "From $1,500",
+  "Branding & Identity": "From $2,500",
+  "Web Design & Development": "From $3,500",
+  "UI/UX for Products": "From $2,000",
+  "Social Media Creatives": "From $800 / mo",
+  "AI Creative Automation": "From $1,500",
+};
+
+const faqItems = [
+  {
+    q: "How long does a typical project take?",
+    a: "It depends on scope—branding projects run 2–4 weeks, website builds 4–8 weeks, and ongoing creative retainers are month-to-month. We share a clear timeline before any work starts.",
+  },
+  {
+    q: "Do you work with startups or only established brands?",
+    a: "Both. We work with early-stage founders who need to build their brand from scratch and with established teams who need to systematise and scale their creative output.",
+  },
+  {
+    q: "What's included in a 'design system'?",
+    a: "A design system from us includes colour tokens, typography scale, spacing rules, reusable UI components (in Figma), and a usage guide your team can follow independently.",
+  },
+  {
+    q: "Can I start with just one service and expand later?",
+    a: "Absolutely. Many clients start with branding or a landing page, then expand into social templates, web redesigns, or AI automation once they see results.",
+  },
+  {
+    q: "Do you offer retainers?",
+    a: "Yes. Our monthly retainers cover ongoing creative production—social creatives, email graphics, ad assets, and content refreshes—at a fixed monthly rate.",
+  },
+  {
+    q: "What do the prices cover?",
+    a: "Each price is a starting point for a defined scope. Final quotes depend on complexity, number of deliverables, and timeline. We always share a detailed breakdown before you commit.",
+  },
+];
 
 export default function ServicesPage() {
   return (
@@ -61,7 +98,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="py-16">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
           <div className="grid gap-4 lg:grid-cols-2">
             {HOME.services.items.map((s, idx) => (
@@ -72,8 +109,8 @@ export default function ServicesPage() {
                       <div className="font-heading text-2xl text-white">{s.title}</div>
                       <p className="mt-3 text-sm leading-6 text-white/70">{s.desc}</p>
                     </div>
-                    <div className="grid h-11 w-11 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10">
-                      <div className="h-2 w-2 rounded bg-[#FF5C1A]" />
+                    <div className="shrink-0 rounded-full bg-[#FF5C1A]/10 px-3 py-1 text-xs font-semibold text-[#FF5C1A] ring-1 ring-[#FF5C1A]/20 whitespace-nowrap">
+                      {servicesPricing[s.title]}
                     </div>
                   </div>
 
@@ -106,7 +143,14 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <section className="border-t border-white/5 py-16 pb-20">
+        <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
+          <FadeIn>
+            <FAQ items={faqItems} heading="Common questions about our services" />
+          </FadeIn>
+        </div>
+      </section>
     </div>
   );
 }
-

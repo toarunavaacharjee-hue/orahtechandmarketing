@@ -96,11 +96,18 @@ export function Testimonials() {
                     {getInitials(t.name)}
                   </span>
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="text-base leading-7 text-white/75">{t.quote}</p>
-                  <div className="mt-6">
-                    <div className="font-heading text-white">{t.name}</div>
-                    <div className="text-sm text-white/60">{t.company}</div>
+                  <div className="mt-6 flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                      <div className="font-heading text-white">{t.name}</div>
+                      <div className="text-sm text-white/60">{"role" in t ? `${(t as {role: string}).role}, ` : ""}{t.company}</div>
+                    </div>
+                    {"result" in t && (
+                      <div className="inline-flex items-center gap-1.5 rounded-full bg-[#b8ff6c]/10 px-3 py-1 text-xs font-semibold text-[#b8ff6c] ring-1 ring-[#b8ff6c]/25">
+                        <span aria-hidden="true">↑</span> {(t as {result: string}).result}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

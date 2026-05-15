@@ -2,6 +2,13 @@ export const BRAND = {
   name: "Orah Tech and Marketing",
   domain: "orahtechandmarketing.com",
   tagline: "Where Technology Meets Growth",
+  email: "hello@orahtechandmarketing.com",
+  location: "USA + India (remote)",
+  social: {
+    linkedin: "https://linkedin.com/company/orahtechandmarketing",
+    instagram: "https://instagram.com/orahtechandmarketing",
+    twitter: "https://twitter.com/orahtech",
+  },
   colors: {
     primary: "#0A0F2C",
     accent: "#FF5C1A",
@@ -134,21 +141,27 @@ export const HOME = {
   testimonials: [
     {
       quote:
-        "The design quality is premium and consistent. Our social content finally looks like a real brand.",
+        "The design quality is premium and consistent. Our social content finally looks like a real brand — engagement went up 3x in the first month.",
       name: "Aditi Sharma",
+      role: "Founder",
       company: "D2C Skincare Brand",
+      result: "3× engagement lift",
     },
     {
       quote:
-        "They redesigned our website with a clean narrative and better UX. The team is fast, collaborative, and detail-obsessed.",
+        "They redesigned our website with a clean narrative and better UX. The team is fast, collaborative, and detail-obsessed. Our demo request rate doubled.",
       name: "Rahul Mehta",
-      company: "B2B SaaS Founder",
+      role: "CEO",
+      company: "B2B SaaS Platform",
+      result: "2× demo requests",
     },
     {
       quote:
-        "From brand guidelines to templates, everything is systemised. We’re able to ship content faster without compromising quality.",
+        "From brand guidelines to templates, everything is systemised. We’re able to ship content faster without compromising quality. What used to take a week now takes a day.",
       name: "Priya Nair",
+      role: "Head of Marketing",
       company: "Healthcare Services",
+      result: "80% faster content ops",
     },
   ],
   process: [
@@ -177,7 +190,7 @@ export const HOME = {
   footer: {
     quickLinks: ["Services", "About", "Work", "Contact"],
     contact: {
-      email: "orahhechandmarketing@gmail.com",
+      email: "hello@orahtechandmarketing.com",
       city: "USA + India (remote)",
     },
   },

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#050A18"/>
+      <stop offset="100%" stop-color="#0A0F2C"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF5C1A" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FF5C1A" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glow2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7c6cff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <ellipse cx="200" cy="150" rx="300" ry="200" fill="url(#glow1)"/>
+  <ellipse cx="1000" cy="500" rx="350" ry="220" fill="url(#glow2)"/>
+  <!-- Logo mark -->
+  <circle cx="96" cy="96" r="40" stroke="#FF5C1A" stroke-width="5" fill="none"/>
+  <circle cx="96" cy="96" r="20" stroke="#00D4FF" stroke-width="2.5" stroke-dasharray="6 6" fill="none"/>
+  <circle cx="96" cy="96" r="7" fill="#FF5C1A"/>
+  <!-- Brand name -->
+  <text x="156" y="86" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="white" opacity="0.95">Orah Tech and Marketing</text>
+  <text x="157" y="116" font-family="system-ui, sans-serif" font-size="18" fill="white" opacity="0.45">Where Technology Meets Growth</text>
+  <!-- Main headline -->
+  <text x="96" y="290" font-family="system-ui, sans-serif" font-size="72" font-weight="800" fill="white" opacity="0.95">We Design Brands.</text>
+  <text x="96" y="380" font-family="system-ui, sans-serif" font-size="72" font-weight="800" fill="white" opacity="0.95">We Build Experiences.</text>
+  <!-- Subtext -->
+  <text x="98" y="448" font-family="system-ui, sans-serif" font-size="26" fill="white" opacity="0.55">Creative-first agency for ambitious brands — premium design,</text>
+  <text x="98" y="484" font-family="system-ui, sans-serif" font-size="26" fill="white" opacity="0.55">content systems, and conversion-focused websites.</text>
+  <!-- Tags -->
+  <rect x="98" y="534" width="140" height="36" rx="18" fill="#FF5C1A" opacity="0.15"/>
+  <rect x="98" y="534" width="140" height="36" rx="18" stroke="#FF5C1A" stroke-width="1.5" fill="none"/>
+  <text x="138" y="558" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FF5C1A" text-anchor="middle">Branding</text>
+  <rect x="252" y="534" width="160" height="36" rx="18" fill="#00D4FF" opacity="0.1"/>
+  <rect x="252" y="534" width="160" height="36" rx="18" stroke="#00D4FF" stroke-width="1.5" fill="none"/>
+  <text x="332" y="558" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#00D4FF" text-anchor="middle">Web Design</text>
+  <rect x="426" y="534" width="160" height="36" rx="18" fill="#7c6cff" opacity="0.1"/>
+  <rect x="426" y="534" width="160" height="36" rx="18" stroke="#7c6cff" stroke-width="1.5" fill="none"/>
+  <text x="506" y="558" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#7c6cff" text-anchor="middle">UI/UX Design</text>
+  <!-- Domain -->
+  <text x="1104" y="558" font-family="system-ui, sans-serif" font-size="18" fill="white" opacity="0.35" text-anchor="end">orahtechandmarketing.com</text>
+</svg>

@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { MarqueeStrip } from "@/components/MarqueeStrip";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { StatsSection } from "@/components/StatsSection";
+import { TrustedBy } from "@/components/TrustedBy";
 import { Testimonials } from "@/components/Testimonials";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { CTABanner } from "@/components/CTABanner";
@@ -75,6 +76,7 @@ export default function HomePage() {
 
       <ServicesGrid />
       <StatsSection />
+      <TrustedBy />
 
       <section className="py-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
