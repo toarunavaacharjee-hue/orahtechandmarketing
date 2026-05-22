@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Built by marketers, powered by technology—Orah Tech and Marketing is a results-first creative partner for ambitious brands.",
+  alternates: { canonical: "https://orahtechandmarketing.com/about" },
 };
 
 const values = [

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Work",
   description:
     "Case studies and campaign snapshots—see how we drive growth across industries.",
+  alternates: { canonical: "https://orahtechandmarketing.com/work" },
 };
 
 const stats = [

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "AI Marketing Workbench — Case Study",
   description:
     "How we designed and built AI Marketing Workbench — a full-stack SaaS PMM + GTM operating platform with 18 AI-powered modules.",
+  alternates: { canonical: "https://orahtechandmarketing.com/work/ai-marketing-workbench" },
 };
 
 const modules = [

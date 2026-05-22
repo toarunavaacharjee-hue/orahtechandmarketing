@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   },
   description:
     "A creative-first tech and marketing agency helping ambitious brands stand out with premium design, content systems, and conversion-focused websites.",
+  alternates: { canonical: `https://${BRAND.domain}` },
   robots: { index: true, follow: true },
   openGraph: {
     title: `${BRAND.name} — ${BRAND.tagline}`,

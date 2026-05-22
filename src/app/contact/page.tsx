@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Book a free creative consult or request an audit. Tell us what you're building and we'll reply within 1 business day.",
+  alternates: { canonical: "https://orahtechandmarketing.com/contact" },
 };
 
 const faqItems = [

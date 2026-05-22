@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Industries",
   description:
     "Industry-specific creative playbooks for branding, content systems, UI/UX, and conversion-focused websites.",
+  alternates: { canonical: "https://orahtechandmarketing.com/industries" },
 };
 
 export default function IndustriesPage() {

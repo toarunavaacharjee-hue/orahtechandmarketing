@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Creative strategy, branding, UI/UX, social media creatives, and web design & development—everything you need to look premium online.",
+  alternates: { canonical: "https://orahtechandmarketing.com/services" },
 };
 
 const servicesPricing: Record<string, string> = {

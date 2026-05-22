@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: data.name,
     description: `${data.name} growth playbook: discovery, strategy, execution, and optimisation—tailored to your industry.`,
+    alternates: { canonical: `https://orahtechandmarketing.com/industries/${industry}` },
   };
 }
 

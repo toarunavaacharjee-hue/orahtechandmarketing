@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Free Audit",
   description:
     "Request a free creative and website audit. Get quick wins across brand consistency, UX clarity, and content systems—within 1 business day.",
+  alternates: { canonical: "https://orahtechandmarketing.com/free-audit" },
 };
 
 export default function FreeAuditPage() {

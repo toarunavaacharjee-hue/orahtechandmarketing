@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms",
   description: "Terms and conditions for Orah Tech and Marketing.",
+  alternates: { canonical: "https://orahtechandmarketing.com/terms" },
 };
 
 export default function TermsPage() {
