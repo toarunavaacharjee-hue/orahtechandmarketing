@@ -316,6 +316,13 @@ export const BLOG_POSTS: BlogPost[] = [
 <li>Is there a specific, credible trust signal (registration number, financial transparency link) visible on the page?</li>
 <li>Does the page load in under 3 seconds on mobile, where most campaign traffic arrives?</li>
 </ol>
+<h2>FAQ</h2>
+<h3>Should a donation page default to one-time or monthly giving?</h3>
+<p>Monthly, where sustainable — recurring donations are typically the highest-value asset a nonprofit website generates, and defaulting to it rather than treating it as a secondary toggle measurably increases how many donors choose it.</p>
+<h3>What information should a donation form actually ask for?</h3>
+<p>Only what's needed to process the gift — name, email, and payment details. Anything else, like a mailing address or how they heard about you, can be collected after the donation is made.</p>
+<h3>Do suggested donation amounts actually work?</h3>
+<p>Yes — donors tend to anchor to the amounts shown rather than doing mental math from a blank field, and tying each amount to a specific outcome tends to outperform a generic amount list.</p>
 <p>If your donation page is getting traffic from campaigns but not converting it, <a href="/industries/ngo">see how we approach nonprofit and NGO design work</a>, or <a href="/free-audit">book a free audit</a> and we'll run this checklist against your actual page.</p>
 `,
     faq: [
@@ -368,6 +375,13 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>Self-serve, lower-price-point products usually convert better with a free trial as the primary CTA—it removes a human bottleneck from the funnel. Higher-price or complex products, anything that needs a champion inside a buying committee, usually convert better pushing toward a demo, where a real conversation can handle objections a page can't.</p>
 <h2>Common SaaS Landing Page Mistakes We See</h2>
 <p>The most frequent one: a single landing page trying to serve every persona and every traffic source at once. A page built for a cold LinkedIn ad and a page built for a warm newsletter click should not look identical—the trust level, and therefore the ask, is different.</p>
+<h2>FAQ</h2>
+<h3>Should a SaaS landing page require a credit card for a free trial?</h3>
+<p>Only if your product's activation is fast enough that most trial users reach value before the trial ends. If activation is slow, a card requirement filters out visitors before they've seen the product work, which usually costs more signups than it prevents fraud.</p>
+<h3>How long should a SaaS landing page be?</h3>
+<p>Long enough to handle the real objections your buying committee has, and no longer. A $20/month self-serve tool needs far less page than a $20,000/year enterprise platform.</p>
+<h3>What's more important on a SaaS landing page: design or copy?</h3>
+<p>Copy carries the argument; design determines whether anyone reads it. Both matter, but a beautifully designed page with a vague headline will underperform a plainer page with a specific, outcome-first one.</p>
 <p>If your signup or demo page is getting traffic but not converting it, <a href="/industries/saas">see how we approach SaaS website and product design</a>, or <a href="/free-audit">book a free audit</a>.</p>
 `,
     faq: [
