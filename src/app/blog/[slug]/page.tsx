@@ -40,9 +40,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     headline: post.title,
     description: post.excerpt,
     datePublished: post.publishedAt,
+    ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
     author: { "@type": "Organization", name: BRAND.name, url: `https://${BRAND.domain}` },
     publisher: { "@type": "Organization", name: BRAND.name, url: `https://${BRAND.domain}` },
   };
+
+  const faqSchema = post.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      }
+    : null;
 
   return (
     <div className="pt-10 pb-24">
@@ -50,6 +63,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
         <FadeIn>
           <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition">
@@ -67,6 +86,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/70">{post.excerpt}</p>
             <p className="mt-3 text-sm text-white/40">
               {new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+              {post.updatedAt && (
+                <>
+                  {" "}
+                  · Updated{" "}
+                  {new Date(post.updatedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+                </>
+              )}
             </p>
           </div>
 

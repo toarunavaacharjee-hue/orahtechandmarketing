@@ -19,8 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return {};
 
   return {
-    title: data.name,
-    description: `${data.name} growth playbook: discovery, strategy, execution, and optimisation—tailored to your industry.`,
+    title: data.metaTitle,
+    description: data.metaDescription,
+    openGraph: {
+      title: data.metaTitle,
+      description: data.metaDescription,
+      type: "website",
+    },
   };
 }
 

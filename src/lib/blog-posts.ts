@@ -5,8 +5,10 @@ export type BlogPost = {
   tag: string;
   category: "Branding" | "Web Design" | "AI & Automation" | "Creative Process" | "Strategy";
   publishedAt: string;
+  updatedAt?: string;
   readTime: number;
   content: string;
+  faq?: Array<{ question: string; answer: string }>;
 };
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -43,27 +45,104 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "landing-page-mistakes-that-kill-conversions",
-    title: "5 Landing Page Mistakes That Kill Conversions",
+    title: "7 Landing Page Mistakes That Kill Conversions (And How to Fix Them)",
     excerpt:
-      "A beautiful landing page that doesn't convert is just expensive decoration. Here are the five mistakes we fix most often—and what to do instead.",
+      "A beautiful landing page that doesn't convert is just expensive decoration. Here's why landing pages fail, the mistakes we fix most often, and a checklist to diagnose your own.",
     tag: "Web Design",
     category: "Web Design",
     publishedAt: "2026-05-06",
-    readTime: 6,
+    updatedAt: "2026-09-02",
+    readTime: 11,
     content: `
-<p>We review a lot of landing pages. And we keep seeing the same five mistakes—on pages that are often beautifully designed, well-written, and completely forgettable the moment someone closes the tab.</p>
-<h2>1. The Headline Describes You, Not the Outcome</h2>
+<p>We review a lot of landing pages. Most of them are beautifully designed, well-written, and completely forgettable the moment someone closes the tab. If you're wondering why your landing page isn't converting, the answer is almost never "the design isn't pretty enough." It's usually one of a small set of structural mistakes that show up again and again, on B2B sites, e-commerce stores, and PPC campaigns alike.</p>
+
+<h2>Why Don't Landing Pages Convert?</h2>
+<p>When traffic arrives but nobody acts, it's almost always one of three root causes: the page doesn't make the value clear in the first five seconds, the page asks for a decision before it's earned trust, or the page technically fails a chunk of visitors (slow load, broken mobile layout, a form that's a chore to fill in). Everything below is a symptom of one of those three problems.</p>
+
+<h2>The 7 Most Common Landing Page Conversion Problems</h2>
+
+<h3>1. The Headline Describes You, Not the Outcome</h3>
 <p>"We are a full-service digital marketing agency with 10+ years of experience" is a description of your company. It's not a reason for someone to stay on the page. Replace it with the specific outcome your best customers care about. "Get 3x more leads from the traffic you already have" is a headline.</p>
-<h2>2. Too Many CTAs</h2>
+<p><strong>The fix:</strong> Write the outcome first, the how second, and your company name last. If you can't state the outcome in under 10 words, the offer isn't clear enough yet—fix that before you touch the design.</p>
+
+<h3>2. Too Many CTAs Competing for Attention</h3>
 <p>When there are four buttons on a landing page—Book a Call, Learn More, See Pricing, Download the Guide—visitors do none of them. Every landing page should have one primary CTA, repeated 2–3 times down the page. Everything else is a distraction.</p>
-<h2>3. No Social Proof at the Decision Point</h2>
+<p><strong>The fix:</strong> Pick the single next step you actually want. Delete or visually demote every other button on the page.</p>
+
+<h3>3. No Social Proof at the Decision Point</h3>
 <p>Most pages put testimonials at the bottom, after the CTA. That's backwards. Put your strongest social proof right next to the button where someone makes the decision to click. That's where trust needs to land.</p>
-<h2>4. Mobile Is an Afterthought</h2>
-<p>Over 60% of landing page traffic comes from mobile on most campaigns. If your hero section requires scrolling to see the headline, or if your CTA button is tiny on a phone—you're losing conversions before anyone reads a word. Design mobile first.</p>
-<h2>5. The Page Is Slow</h2>
+<p><strong>The fix:</strong> Place a logo strip, a single strong testimonial, or a stat ("200+ brands supported") directly beside or beneath your primary CTA—not three scrolls away.</p>
+
+<h3>4. Mobile Is an Afterthought</h3>
+<p>Over 60% of landing page traffic comes from mobile on most campaigns. If your hero section requires scrolling to see the headline, or if your CTA button is tiny on a phone, you're losing conversions before anyone reads a word. Design mobile first.</p>
+<p><strong>The fix:</strong> Open the page on your own phone before you ship it. If the headline and CTA aren't both visible without scrolling, the layout isn't done.</p>
+
+<h3>5. The Page Is Slow</h3>
 <p>Every additional second of load time reduces conversions by roughly 7%. Run your page through PageSpeed Insights. If your score is below 70 on mobile, fix that before you touch copy or design.</p>
-<p>If your landing page isn't converting the way it should, <a href="/contact">let's talk</a>—we do conversion-focused web design and we'll tell you exactly what to fix.</p>
+<p><strong>The fix:</strong> Compress hero images, defer non-critical scripts, and avoid heavyweight animation libraries above the fold.</p>
+
+<h3>6. The Message Doesn't Match the Ad</h3>
+<p>Someone clicks an ad promising "50% off your first order" and lands on your generic homepage with no mention of the offer. That mismatch kills trust instantly, and it's one of the most common landing page conversion problems in paid campaigns specifically.</p>
+<p><strong>The fix:</strong> The headline of the landing page should echo the promise of the ad almost word for word. If the ad and the page feel like two different companies, you've lost the visitor.</p>
+
+<h3>7. The Form Asks for Too Much, Too Soon</h3>
+<p>A ten-field form in exchange for a free guide is a bigger ask than most visitors are willing to make on a first visit. Every additional form field reduces completion rate.</p>
+<p><strong>The fix:</strong> Ask only for what you need to make the very next contact (usually name + email). Collect the rest later, once trust is established.</p>
+
+<h2>PPC Landing Page Mistakes That Waste Ad Spend</h2>
+<p>If you're running paid traffic, landing page mistakes get expensive fast—every visitor who bounces is money spent for nothing. A few PPC-specific problems compound the ones above:</p>
+<ul>
+<li><strong>Sending paid traffic to your homepage.</strong> A homepage has to serve everyone. A landing page only has to convert the one audience your ad targeted. Build a dedicated page per campaign.</li>
+<li><strong>Poor message match hurts Quality Score.</strong> On Google Ads specifically, a landing page that doesn't match the ad's keywords and promise lowers your Quality Score, which raises your cost per click—so this mistake taxes you twice.</li>
+<li><strong>One landing page for every campaign.</strong> Cold traffic, retargeting traffic, and referral traffic are at different stages of trust. A single generic page can't speak to all three.</li>
+</ul>
+
+<h2>How to Diagnose Your Landing Page's Conversion Problems</h2>
+<p>Before you redesign anything, run this checklist against your current page:</p>
+<ol>
+<li>Can a first-time visitor state your offer in one sentence after 5 seconds on the page?</li>
+<li>Is there exactly one primary action, and is it visible without scrolling on mobile?</li>
+<li>Is social proof visible within one scroll of the CTA, not just at the bottom of the page?</li>
+<li>Does the page load in under 3 seconds on mobile (check PageSpeed Insights)?</li>
+<li>If this page receives paid traffic, does the headline match the ad copy that sent people here?</li>
+<li>Does the form ask for the minimum information needed for the next step?</li>
+</ol>
+<p>If you answered "no" to two or more of these, that's usually enough to explain a weak conversion rate—no full redesign required, just targeted fixes.</p>
+
+<h2>Landing Page Mistakes: FAQ</h2>
+<h3>What is the biggest mistake on a landing page?</h3>
+<p>An unclear or company-centric headline. If a visitor can't tell what they get and why it matters within 5 seconds, no amount of design polish downstream will save the conversion rate.</p>
+<h3>Why is my landing page getting traffic but no conversions?</h3>
+<p>This is almost always a message-match or trust problem: the page doesn't clearly continue the promise that brought the visitor there, or it asks for a decision (a purchase, a form fill) before establishing enough credibility to earn it.</p>
+<h3>How long should a landing page be?</h3>
+<p>Long enough to answer every objection your best customers actually have, and no longer. A high-consideration B2B purchase often needs a longer page with more proof; a simple, low-cost offer usually converts better short. Length should follow the buying decision, not a template.</p>
+<h3>What's a good landing page conversion rate?</h3>
+<p>Benchmarks vary widely by industry and traffic source, but most well-optimised landing pages convert in the 3–10% range. If you're well under that, it's worth running the diagnostic checklist above before assuming it's a traffic quality problem.</p>
+
+<p>If your landing page isn't converting the way it should, <a href="/contact">let's talk</a>—we do conversion-focused web design and we'll tell you exactly what to fix. Prefer a self-serve starting point? <a href="/free-audit">book a free audit</a> and we'll run this diagnostic against your actual page.</p>
 `,
+    faq: [
+      {
+        question: "What is the biggest mistake on a landing page?",
+        answer:
+          "An unclear or company-centric headline. If a visitor can't tell what they get and why it matters within 5 seconds, no amount of design polish downstream will save the conversion rate.",
+      },
+      {
+        question: "Why is my landing page getting traffic but no conversions?",
+        answer:
+          "This is almost always a message-match or trust problem: the page doesn't clearly continue the promise that brought the visitor there, or it asks for a decision before establishing enough credibility to earn it.",
+      },
+      {
+        question: "How long should a landing page be?",
+        answer:
+          "Long enough to answer every objection your best customers actually have, and no longer. Length should follow the buying decision, not a template.",
+      },
+      {
+        question: "What's a good landing page conversion rate?",
+        answer:
+          "Benchmarks vary by industry and traffic source, but most well-optimised landing pages convert in the 3–10% range.",
+      },
+    ],
   },
   {
     slug: "creative-automation-ship-more-without-burning-out",

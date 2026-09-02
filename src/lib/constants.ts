@@ -211,6 +211,8 @@ export const INDUSTRIES: Record<
   {
     slug: IndustrySlug;
     name: string;
+    metaTitle: string;
+    metaDescription: string;
     hero: { headline: string; subtext: string };
     whoItsFor: string[];
     outcomes: string[];
@@ -221,6 +223,9 @@ export const INDUSTRIES: Record<
   ecommerce: {
     slug: "ecommerce",
     name: "E-commerce",
+    metaTitle: "E-commerce Web Design & Creative Agency",
+    metaDescription:
+      "Conversion-focused landing pages, product creatives, and brand systems for D2C and catalog-heavy e-commerce brands. Book a free store audit.",
     hero: {
       headline: "Make your store look premium—and convert better.",
       subtext:
@@ -239,6 +244,9 @@ export const INDUSTRIES: Record<
   saas: {
     slug: "saas",
     name: "SaaS",
+    metaTitle: "SaaS Branding & Website Design Agency",
+    metaDescription:
+      "Positioning, landing page UX, and product UI design for B2B SaaS teams preparing to scale. Clearer messaging, better demo and trial conversion.",
     hero: {
       headline: "Tell your story clearly—then make the UI feel premium.",
       subtext:
@@ -257,6 +265,9 @@ export const INDUSTRIES: Record<
   healthcare: {
     slug: "healthcare",
     name: "Healthcare",
+    metaTitle: "Healthcare Marketing & Web Design Agency",
+    metaDescription:
+      "Credibility-first websites and content systems for clinics, diagnostics, and wellness brands. Build trust before the first call.",
     hero: {
       headline: "Build trust through design—before the first call.",
       subtext:
@@ -275,6 +286,9 @@ export const INDUSTRIES: Record<
   "real-estate": {
     slug: "real-estate",
     name: "Real Estate",
+    metaTitle: "Real Estate Marketing & Creative Agency",
+    metaDescription:
+      "Premium project pages, brochures, and social creatives for builders, developers, and broker networks that build buyer confidence.",
     hero: {
       headline: "Sell the lifestyle with high-trust creative systems.",
       subtext:
@@ -293,6 +307,9 @@ export const INDUSTRIES: Record<
   d2c: {
     slug: "d2c",
     name: "D2C",
+    metaTitle: "D2C Branding & Creative Agency",
+    metaDescription:
+      "Identity, content systems, and conversion-focused websites for consumer brands and subscription products that need to feel premium fast.",
     hero: {
       headline: "Build a brand people remember—visually and emotionally.",
       subtext:
@@ -311,6 +328,9 @@ export const INDUSTRIES: Record<
   education: {
     slug: "education",
     name: "Education",
+    metaTitle: "EdTech & Education Marketing Agency",
+    metaDescription:
+      "Program landing pages, brochures, and content templates that make your courses and cohorts easy to understand—and easy to choose.",
     hero: {
       headline: "Communicate outcomes with clarity and trust.",
       subtext:
@@ -329,6 +349,9 @@ export const INDUSTRIES: Record<
   hospitality: {
     slug: "hospitality",
     name: "Hospitality",
+    metaTitle: "Hospitality Marketing & Web Design Agency",
+    metaDescription:
+      "Premium web design, menus, and social creatives for hotels, restaurants, and experience brands that need to sell the vibe before the visit.",
     hero: {
       headline: "Make people feel the experience before they book.",
       subtext:
@@ -347,6 +370,9 @@ export const INDUSTRIES: Record<
   ngo: {
     slug: "ngo",
     name: "NGO / Non-profit",
+    metaTitle: "Nonprofit & NGO Marketing Agency",
+    metaDescription:
+      "Donor-friendly pages and impact storytelling that build trust and drive donations for NGOs, charities, and community initiatives.",
     hero: {
       headline: "Storytelling that builds trust—and drives action.",
       subtext:
